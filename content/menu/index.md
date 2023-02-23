@@ -1,8 +1,9 @@
 ---
 headless: true
 ---
-- **Tareas**
-- [Tarea 1]({{< relref "/docs/shortcodes/p5" >}})
+
+- **Proyectos**
+- [Ilusiones visuales]({{< relref "/docs/shortcodes/p5" >}})
 <br />
 
 
