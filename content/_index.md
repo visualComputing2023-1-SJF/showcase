@@ -7,5 +7,5 @@ Esta página tiene como objetivo mostrar los proyectos desarrollados en el curso
 
 # Sobre el equipo
 - Santiago Cassiano Rozo:
-- Juan Camilo Alfonso Carrillo:
+- Julián Camilo Alfonso Carrillo:
 - Fabian Camilo Castro Lozano:
