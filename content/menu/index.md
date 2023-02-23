@@ -1,6 +1,8 @@
 ---
 headless: true
 ---
+- **Equipo**
+- [SobreProyecto]({{< relref "/docs/Equipo/SobreProyecto" >}})
 - **Shortcodes**
 - [p5]({{< relref "/docs/shortcodes/p5" >}})
 - [Buttons]({{< relref "/docs/shortcodes/buttons" >}})
