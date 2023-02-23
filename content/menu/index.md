@@ -1,6 +1,10 @@
 ---
 headless: true
 ---
+- **Tareas**
+- [Tarea 1]({{< relref "/docs/shortcodes/p5" >}})
+<br />
+
 
 - **Shortcodes**
 - [p5]({{< relref "/docs/shortcodes/p5" >}})
@@ -11,3 +15,4 @@ headless: true
 - [Mermaid]({{< relref "/docs/shortcodes/mermaid" >}})
 - [Tabs]({{< relref "/docs/shortcodes/tabs" >}})
 <br />
+
