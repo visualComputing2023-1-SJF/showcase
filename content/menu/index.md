@@ -1,6 +1,8 @@
 ---
 headless: true
 ---
+- **Equipo**
+- [Sobre nosotros]({{< relref "/docs/Equipo/aboutProject" >}})
 - **Shortcodes**
 - [p5]({{< relref "/docs/shortcodes/p5" >}})
 - [Buttons]({{< relref "/docs/shortcodes/buttons" >}})
