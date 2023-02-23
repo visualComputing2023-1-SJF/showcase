@@ -1,9 +1,6 @@
 ---
 headless: true
 ---
-
-- **Proyectos**
-- [Ilusiones visuales]({{< relref "/docs/shortcodes/p5" >}})
 - **Shortcodes**
 - [p5]({{< relref "/docs/shortcodes/p5" >}})
 - [Buttons]({{< relref "/docs/shortcodes/buttons" >}})
