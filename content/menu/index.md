@@ -1,9 +1,11 @@
 ---
 headless: true
 ---
-- **Equipo**
-- [SobreProyecto]({{< relref "/docs/Equipo/SobreProyecto" >}})
-- [Integrantes]({{< relref "/docs/Equipo/Integrantes" >}})
+- **Acerca del equipo**
+- [SobreProyecto]({{< relref "/docs/AcercaDelEquipo/SobreProyecto" >}})
+- [Integrantes]({{< relref "/docs/AcercaDelEquipo/Integrantes" >}})
+- **Ejercicios**
+- [IlusionesVisuales]({{< relref "/docs/Ejercicios/IlusionesVisuales" >}})
 - **Shortcodes**
 - [p5]({{< relref "/docs/shortcodes/p5" >}})
 - [Buttons]({{< relref "/docs/shortcodes/buttons" >}})
