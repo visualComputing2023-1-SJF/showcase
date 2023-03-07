@@ -4,7 +4,7 @@ let lista_suelos = []
 
 function setup() {
   createCanvas(500, 400);
-  frameRate(60)
+  frameRate(55)
   
 }
 
@@ -12,8 +12,8 @@ function draw() {
   //Llamar la funcion que se encarga de redibujar el escenario
   dibujarFondo()
   
-  //Cada 20 Frames generar una nueva baldosa,
-  if (frameCount % 20 == 1){
+  //Cada 15 Frames generar una nueva baldosa,
+  if (frameCount % 10 == 1){
     lista_suelos.push(new Suelo())
   }
   
@@ -194,10 +194,10 @@ class Suelo{
     //Piso
     //Coordenada x1
     //Valor x en esquina superior izq piso
-    this.x1 = 240
+    this.x1 = 235
     //Coordenada x2
     //Valor x en esquina superior der piso
-    this.x2 = 260
+    this.x2 = 265
     //Coordenada x3
     //Valor x en esquina inferior der piso
     this.x3 = 270
@@ -216,10 +216,10 @@ class Suelo{
     this.x2Escalon = 270
     //Coordenada x3
     //Valor x en esquina inferior der piso
-    this.x3Escalon = 280
+    this.x3Escalon = 275
     //Coordenada x4
     //Valor x en esquina inferior izq piso
-    this.x4Escalon = 220
+    this.x4Escalon = 225
     //Valor de color inicial 
     this.escalagrisEscalon = 0
   }
@@ -239,8 +239,8 @@ class Suelo{
     this.x3Escalon = this.x3Escalon+1
     
     //Aumentar la escala de gris para aclararse a medida que se acerca
-    this.escalagris = this.escalagris + 1
-    this.escalagrisEscalon = this.escalagrisEscalon +2
+    this.escalagris = this.escalagris + 0.8
+    this.escalagrisEscalon = this.escalagrisEscalon +1.7
   }
   
   //Funcion para calcular la coordenada y dado un valor de la coordenada x de una esquina izquierda del cuadrilatero
