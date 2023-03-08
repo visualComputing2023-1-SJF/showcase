@@ -31,18 +31,22 @@ function draw() {
   } 
   
   background(0);
+
   // Move the origin to the top-left corner of the canvas
   rotateX(PI/3.5);
   translate(-w/2, -h/2, 0);  
-
+  
   for (let row = 0; row < rows; row++) {
     beginShape(TRIANGLE_STRIP);
     noStroke();
-    // stroke(color(44,250,31));
+    // stroke(color(44,250,31));    
     for (let col = 0; col <= cols; col++) {   
       strokeColor = color(map(terrainElevation[row][col], lowest , highest , 0 , 255));
       fill(strokeColor)            
+      //stroke(strokeColor);
       vertex(col*scale,row*scale, terrainElevation[row][col]);
+      strokeColor = color(map(terrainElevation[row+1][col], lowest , highest , 0 , 255));
+      fill(strokeColor)         
       vertex(col*scale,(row+1)*scale, terrainElevation[row+1][col] );      
     }
     endShape();
