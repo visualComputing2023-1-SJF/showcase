@@ -1,7 +1,7 @@
 let cols, rows;
 let scale = 20;
 let w =  1000;
-let h = 600;
+let h = 640;
 let lowest = -100;
 let highest = 100;
 
@@ -36,6 +36,7 @@ function draw() {
   rotateX(PI/3.5);
   translate(-w/2, -h/2, 0);  
   
+  /*
   for (let row = 0; row < rows; row++) {
     beginShape(TRIANGLE_STRIP);
     noStroke();
@@ -49,6 +50,65 @@ function draw() {
       fill(strokeColor)         
       vertex(col*scale,(row+1)*scale, terrainElevation[row+1][col] );      
     }
+    endShape();
+  }*/
+
+  for (let row = 0; row < rows; row++) {
+    beginShape(TRIANGLES);
+    noStroke();
+    // stroke(color(44,250,31));    
+    for (let col = 0; col <= cols; col++) {   
+      //strokeColor = color(map(terrainElevation[row][col], lowest , highest , 0 , 255));
+      //fill(strokeColor)    
+      let height1,height2,height3,strokeColor;
+      if(row === 0){
+        height1 = terrainElevation[row][col]
+        height2 = terrainElevation[row+1][col]
+        height3 = terrainElevation[row][col+1]
+        strokeColor = color(map((height1+height2+height3)/3, lowest , highest , 0 , 255));
+        fill(strokeColor);
+        vertex(col*scale,row*scale, terrainElevation[row][col]);            
+        vertex(col*scale,(row+1)*scale, terrainElevation[row+1][col] );      
+        vertex((col+1)*scale,(row)*scale, terrainElevation[row][col+1] );
+      }
+      
+      else if (row % 2 === 1){
+        height1 = terrainElevation[row][col]
+        height2 = terrainElevation[row-1][col+1]
+        height3 = terrainElevation[row][col+1]
+        strokeColor = color(map((height1+height2+height3)/3, lowest , highest , 0 , 255));
+        fill(strokeColor)
+        vertex(col*scale,row*scale, terrainElevation[row][col]);            
+        vertex((col+1)*scale,(row-1)*scale, terrainElevation[row-1][col+1] );      
+        vertex((col+1)*scale,row*scale, terrainElevation[row][col+1] );
+        height1 = terrainElevation[row][col]
+        height2 = terrainElevation[row+1][col]
+        height3 = terrainElevation[row][col+1]
+        strokeColor = color(map((height1+height2+height3)/3, lowest , highest , 0 , 255));
+        fill(strokeColor)
+        vertex(col*scale,row*scale, terrainElevation[row][col]);            
+        vertex(col*scale,(row+1)*scale, terrainElevation[row+1][col] );      
+        vertex((col+1)*scale,(row)*scale, terrainElevation[row][col+1] );
+      }      
+      else if (row % 2 === 0){
+        height1 = terrainElevation[row][col]
+        height2 = terrainElevation[row+1][col]
+        height3 = terrainElevation[row][col+1]
+        strokeColor = color(map((height1+height2+height3)/3, lowest , highest , 0 , 255));
+        fill(strokeColor)
+        vertex(col*scale,row*scale, terrainElevation[row][col]);            
+        vertex(col*scale,(row+1)*scale, terrainElevation[row+1][col] );      
+        vertex((col+1)*scale,(row)*scale, terrainElevation[row][col+1] );
+        height1 = terrainElevation[row][col]
+        height2 = terrainElevation[row-1][col+1]
+        height3 = terrainElevation[row][col+1]
+        strokeColor = color(map((height1+height2+height3)/3, lowest , highest , 0 , 255));
+        fill(strokeColor)
+        vertex(col*scale,row*scale, terrainElevation[row][col]);            
+        vertex((col+1)*scale,(row-1)*scale, terrainElevation[row-1][col+1] );      
+        vertex((col+1)*scale,row*scale, terrainElevation[row][col+1] );
+      }
+      }
     endShape();
   }
 }
