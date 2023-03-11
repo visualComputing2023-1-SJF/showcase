@@ -1,7 +1,7 @@
 let cols, rows;
 let scale;
-let w =  960;
-let h = 720;
+let w =  1300;
+let h = 800;
 let lowest = -100;
 let highest = 100;
 let checkBoxColoring;
@@ -40,7 +40,7 @@ function change_stroke() {
 
 
 function setup() {
-  let canvas = createCanvas(600, 600, WEBGL);  
+  let canvas = createCanvas(800, 600, WEBGL);  
   canvas.position(5,5);  
   checkBoxColoring = createCheckbox("Solid coloring" , false);
   checkBoxColoring.position(10,60);
@@ -50,7 +50,7 @@ function setup() {
   checkBoxStroke.position(10,80);
   checkBoxStroke.changed(change_stroke);
   checkBoxStroke.style('color', '#7CFC00');
-  scaleSlider = createSlider(10,40,20,10);
+  scaleSlider = createSlider(10,100,20,10);
   scaleSlider.style('width' , '80px');  
   scaleSlider.style('display', 'block');  
   scaleSlider.style('position', 'relative');  
@@ -76,8 +76,8 @@ function setup() {
 function draw() {    
   frameRate(60)
   scale = scaleSlider.value();
-  cols = w / scale;
-  rows = h / scale;   
+  cols = ceil(w / scale);
+  rows = ceil(h / scale);   
   let terrainElevation = [] ;
   flying -= flyingVelocitySlider.value();
   let yoff = flying;
