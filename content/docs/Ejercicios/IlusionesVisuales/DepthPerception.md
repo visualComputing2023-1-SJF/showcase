@@ -2,36 +2,44 @@
 
 ## Introducción
 
-En este ejercicio se buscó dar la sensación de profundidad y movimiento en un lienzo 2D que representa una escalera infinita. Para lograr el efecto deseado se utilizó un punto de fuga y se modificaron distintos atributos (tamaño, color y velocidad) de los objetos en la escena de acuerdo a qué tan cerca se encuentran al espectador.
+En este ejercicio se buscó dar la **sensación de profundidad y movimiento en un lienzo 2D** que representa una **escalera infinita**. Para lograr el efecto deseado se utilizó un punto de fuga y se modificaron distintos atributos (tamaño, color y velocidad) de los objetos en la escena de acuerdo a qué tan cerca se encuentran al espectador.
 
 ## Antecedentes
 
 A continuación se describirán las claves monoculares y cinéticas que se aplicaron en el ejercicio junto con pequeños ejemplos de sus usos. 
 
-La primera clave monocular utilizada para hacer la ilusión de profundidad en el ejercicio fue la perspectiva lineal. En la perspectiva lineal las líneas convergen en puntos de fuga, las ubicaciones donde están los puntos de fuga se perciben como los lugares que se encuentran más lejanos en el dibujo. Un caso específico de la perspectiva lineal es cuando se tiene un solo punto de fuga y este suele usarse para dar profundidad a imágenes de caminos.
+La primera clave monocular utilizada para hacer la ilusión de profundidad en el ejercicio fue la [perspectiva lineal](https://www.esdesignbarcelona.com/actualidad/ilustracion/perspectiva-dibujo-tecnico). En la perspectiva lineal las líneas convergen en puntos de fuga, las ubicaciones donde están los puntos de fuga se perciben como los lugares que se encuentran más lejanos en el dibujo. Un caso específico de la perspectiva lineal es cuando se tiene un solo punto de fuga y este suele usarse para dar profundidad a imágenes de caminos.
 
 <div align="center">
-<img src="/showcase/sketches/depth_perception/EscaleraPerspectivaLineal.jpg" alt="EscaleraPerspectivaLineal" style="height: 400px; width:300px;"/>
+<img src="/showcase/sketches/depth_perception/EscaleraPerspectivaLineal.jpg" alt="EscaleraPerspectivaLineal" style="height: 350px; width:250px;"/>
+
+Imagen tomada de [este sitio](https://crispy-ghee.tumblr.com/post/42783061352/crispys-perspective-tips-the-basics-of-drawing/amp)
 </div>
 
-La segunda clave monocular usada es el tamaño relativo de los objetos. El tamaño relativo de los objetos nos permite saber si un objeto está más cerca respecto a otros, esto debido a que interpretamos que los objetos de mayor tamaño son los que se encuentran más cercanos a nosotros.
+La segunda clave monocular usada es el [tamaño relativo](https://psych.hanover.edu/krantz/art/rel_size.html) de los objetos. El tamaño relativo nos permite saber si un objeto está más cerca respecto a otros, esto debido a que percibimos los objetos más cercanos en un mayor tamaño.
 
 <div align="center">
-<img src="/showcase/sketches/depth_perception/TamanoRelativo.jpg" alt="TamanoRelativo" style="height: 400px; width:500px;"/>
+<img src="/showcase/sketches/depth_perception/TamanoRelativo.jpg" alt="TamanoRelativo" style="height: 300px; width:400px;"/>
+
+Imagen tomada de [este sitio](https://psych.hanover.edu/krantz/art/rel_size.html)
 </div>
 
-Como tercera clave monocular es la iluminación y sombra las cuales nos permiten ubicar los objetos en el entorno según cómo incide la luz proveniente de alguna fuente sobre ellos. Entre más cerca se encuentren a la luz, serán más brillantes los objetos. En el siguiente ejemplo se puede ver cómo a partir de un foco de luz se puede dar profundidad a una obra:
+La tercera clave monocular es la [iluminación y sombras](https://educacionplasticayvisual.com/espacio-y-volumen/calves-de-profundidad/) las cuales nos permiten ubicar los objetos en el entorno según cómo incide la luz proveniente de alguna fuente sobre ellos. Entre más cerca se encuentren a un foco de luz los objetos se ven más brillantes. En el siguiente ejemplo se puede ver cómo a partir de un foco de luz se puede dar profundidad a una obra:
 
 <div align="center">
-<img src="/showcase/sketches/depth_perception/LuzSombra.jpg" alt="LuzSombra" style="height: 400px; width:500px;"/>
+<img src="/showcase/sketches/depth_perception/LuzSombra.jpg" alt="LuzSombra" style="height: 300px; width:400px;"/>
+
+Imagen tomada de [este sitio](https://educacionplasticayvisual.com/espacio-y-volumen/calves-de-profundidad/)
 </div>
 
-Por último para dar sensación de movimiento y profundidad en imágenes 2D tenemos el efecto parallax. El efecto parallax nos indica que cuando nos movemos percibimos que los objetos más cercanos a nosotros se mueven a una velocidad mayor que los más alejados. A partir de ello podemos reconocer la distancia a la que estamos de diferentes objetos al movernos. En el minuto 29 del siguiente video se puede percibir este efecto.
+Por último para dar sensación de desplazamiento y profundidad en imágenes 2D tenemos el [movimiento relativo](https://wps.prenhall.com/wps/media/objects/803/822654/psychplace/depth/motion.html). El movimiento relativo hace referencia al fenómeno en el cual al movernos percibimos que los objetos más cercanos a nosotros se mueven a una velocidad mayor que los más alejados. A partir de ello podemos reconocer la distancia a la que estamos de diferentes objetos al movernos. 
+
+En el minuto 29 del siguiente video se puede percibir este efecto en un tren, en el cual se percibe más rápido el movimiento de los postes a medida que nos acercamos a ellos.
 
 <div align="center">
 <iframe
-    width="640"
-    height="480"
+    width="426"
+    height="240"
     src="https://www.youtube.com/embed/gDPdm2Nv26g"
     frameborder="0"
     allow="autoplay; encrypted-media"
@@ -45,8 +53,8 @@ Un antecedente importante y del cual nos basamos para este ejercicio es la “Es
 
 <div align="center">
 <iframe
-    width="640"
-    height="480"
+    width="426"
+    height="240"
     src="https://www.youtube.com/embed/monPyqs9UFs"
     frameborder="0"
     allow="autoplay; encrypted-media"
@@ -57,7 +65,7 @@ Un antecedente importante y del cual nos basamos para este ejercicio es la “Es
 
 Aunque Super Mario 64 es un juego en 3D, esta escena nos permite ver cómo podría ser un camino infinito y cómo se modifica la escala e iluminación de los objetos al moverse a través de él.
 
-## Metodologia y Código
+## Código
 
 Bajando la siguiente pestaña se encuentra el código completo de la aplicación realizada en p5.js.
 
@@ -395,41 +403,40 @@ class Suelo{
 ```
 {{< /details >}}
 
-
 Los aspectos a resaltar del código son los siguientes:
 
-Se tiene el método dibujarFondo() encargado de dibujar elementos que no cambian de posición durante la animación. En este método se dibuja un fondo blanco para generar un nuevo cuadro en la animación. También se dibujan las paredes con un gradiente el cual hace más oscura la pared a medida que se acerca más al fondo del pasillo que es representado por un cuadro negro. 
+Se tiene el método **dibujarFondo()** encargado de dibujar elementos que no cambian de posición durante la animación. En este método se dibuja un fondo blanco para generar un nuevo cuadro en la animación. También se dibujan las paredes con un gradiente el cual hace más oscura la pared a medida que se acerca más al fondo del pasillo que es representado por un cuadro negro. 
 
-Se hicieron 3 clases para representar los elementos que tienen movimiento en la escena, estas clases son “PinturaIzquierda”, “PinturaDerecha” y “Suelo”. Cada cierta cantidad de frames se genera una nueva instancia de estas clases, de esta manera se logra hacer que la animación sea infinita.
+Se hicieron **3 clases** para representar los elementos que tienen movimiento en la escena, estas clases son **“PinturaIzquierda”, “PinturaDerecha” y “Suelo”**. Cada cierta cantidad de frames se genera una nueva instancia de estas clases, de esta manera se logra hacer que la animación sea infinita.
 
-En estas clases los métodos más importantes son los constructores, los métodos moverse() y dibujar().
+En estas clases los métodos más importantes son los **constructores**, los métodos **moverse()** y **dibujar()**.
 
-Dentro de los constructores se inicializan los atributos de color y coordenadas de ubicación de las pinturas y los suelos. Cada instancia se crea de manera que su escala sea pequeña y su color sea oscuro, de manera que se dé la sensación de que surgen a partir del punto más lejano en el pasillo donde se encuentra el camino infinito. 
+En los **constructores** se inicializan los atributos de color y coordenadas de ubicación de las pinturas y los suelos. Cada instancia se crea de manera que su escala sea pequeña y su color sea oscuro, de manera que se dé la sensación de que surgen a partir del punto más lejano en el pasillo donde se encuentra el camino infinito. 
 
-Los métodos moverse() hacen que en cada frame las instancias modifiquen sus valores de color y las coordenadas en las que se ubican en el espacio, de manera que se de una sensación de movimento en la escena. En general en este método se modifican los atributos tanto de las pinturas como de los suelos para que su tamaño incremente y sus colores sean más claros al acercarse a los bordes del lienzo.
+Los **métodos moverse()** hacen que en cada frame las instancias modifiquen sus valores de color y las coordenadas en las que se ubican en el espacio de manera que se de una sensación de movimento en la escena. En general en este método se modifican los atributos de las pinturas y los suelos para que su tamaño incremente y sus colores sean más claros al acercarse a los bordes del lienzo.
 
-Los métodos dibujar() hacen que cada instancia de las pinturas y los suelos en la escena se dibujen en el lienzo de acuerdo a los atributos que poseen individualmente. 
+Los **métodos dibujar()** hacen que cada instancia de las pinturas y los suelos en la escena se dibujen en el lienzo de acuerdo a los atributos que poseen individualmente en cada frame. 
 
-Todas las instancias de pinturas y suelos que se visualizan en la animación se encuentran en listas, que permiten en cada frame de la animación llamar los métodos moverse y dibujar de cada instancia presente en el dibujo.
+Finalmente, cabe resaltar que las instancias de pinturas y suelos que se visualizan en la animación se encuentran en listas que se recorren para llamar los métodos moverse() y dibujar() de cada objeto en los frames de la animación.
 
 ## Resultados
-Utilizando todos los elementos anteriormente descritos se obtuvo el siguiente resultado:
+La animación generada con el código es la siguiente:
 
 <div align="center">
 {{< p5-iframe sketch="/showcase/sketches/depth_perception/escalera_infinita.js" width="524" height="424" >}}
 </div>
 
-Se utilizó la perspectiva lineal con un punto de fuga que se encuentra al final del pasillo en donde convergen las líneas paralelas de los costados de las escaleras para dar una sensación de profundidad a la animación.
+Se utilizó la **perspectiva lineal** con un punto de fuga que se encuentra al final del pasillo en donde convergen las líneas paralelas de los costados de las escaleras para dar una sensación de profundidad a la animación.
 
-Por otra parte se modifica el tamaño de los objetos para dar una sensación de profundidad. Por ejemplo, los cuadros rojos (Pinturas) y el suelo se vuelven más grandes a medida que se acercan al final del lienzo.
+Por otra parte se usó el **tamaño relativo** de los objetos para dar una sensación de profundidad. Por ejemplo, los cuadros rojos (Pinturas) y el suelo se vuelven más grandes a medida que se acercan al final del lienzo.
 
-También cabe resaltar que para dar una sensación de profundidad se hizo que los objetos a mayor distancia sean más oscuros. Por ejemplo las pinturas cuando estan cerca al punto de fuga tienen un color cercano al negro, pero a medida que se acercan adquieren un color rojo.
+También cabe resaltar que para dar una sensación de profundidad se intentó simular **iluminación** en la escena haciendo que los objetos más lejanos al espectador sean más oscuros. Por ejemplo las pinturas cuando estan cerca al punto de fuga tienen un color cercano al negro, pero a medida que se acercan adquieren un color rojo.
 
-Finalmente, para dar una sensación de movimiento en la obra se hace que los objetos que se encuentran más cercanos se mueven de una manera más rápida respecto a los que se encuentran en el fondo, buscando dar al usuario la sensación de que está recorriendo dicha escalera.
+Finalmente, para dar una sensación de movimiento en la obra se aplica el **movimiento relativo** al hacer que los objetos que se encuentran más cercanos se muevan de manera más rápida respecto a los que se encuentran en el fondo, buscando dar al usuario la sensación de que está recorriendo dicha escalera.
 
 ## Conclusiones y trabajo futuro
 
-Este ejercicio permitió observar que a partir de la perspectiva lineal, el tamaño relativo, luces, sombras y efecto parallax se puede dar un efecto 3D con movimiento a un cuadro en 2D. Aprovechando tanto las pistas de profundidad como de movimiento se logró generar el efecto de la escalera infinita en una animación 2D que logra aproximarse al escenario visto en Super Mario 64.
+Este ejercicio permitió observar que a partir de la **perspectiva lineal**, el **tamaño relativo**, **luces**, **sombras** y el **movimiento relativo** se puede dar un efecto 3D a un cuadro en 2D. Aprovechando tanto las pistas de profundidad como de movimiento se logró generar el efecto de la escalera infinita en una animación 2D que logra aproximarse al escenario 3D visto en Super Mario 64.
 
 Viendo que es posible imitar una escena de un juego 3D por medio de las pistas de profundidad y movimiento como trabajo futuro sería interesante imitar otras escenas famosas de videojuegos por medio de un cuadro 2D.
 
@@ -437,20 +444,20 @@ Respecto al caso específico de este ejercicio podría ser interesante añadir m
 
 ## Bibliografia
 
-(Falta ponerla en el formato correcto)
+- Puell, M. Percepción de la profundidad. Universidad Complutense Madrid. https://eprints.ucm.es/id/eprint/59143/1/Tema%2014.%20Percepci%C3%B3n%20de%20profundidad.pdf
 
-Video Super Mario 64: https://www.youtube.com/embed/monPyqs9UFs
+- Pérez, A. (2022, Enero 13). Algunos tipos de perspectiva en dibujo técnico que te sorprenderán. ESDESIGN. https://www.esdesignbarcelona.com/actualidad/ilustracion/perspectiva-dibujo-tecnico
 
-Percepción de la profundidad: https://eprints.ucm.es/id/eprint/59143/1/Tema%2014.%20Percepci%C3%B3n%20de%20profundidad.pdf
+- EPVA Educación Plástica y Visual. Calves de Profundidad . https://educacionplasticayvisual.com/espacio-y-volumen/calves-de-profundidad/
 
-Perspectiva lineal: https://www.esdesignbarcelona.com/actualidad/ilustracion/perspectiva-dibujo-tecnico
+- Relative Size. https://psych.hanover.edu/krantz/art/rel_size.html
 
-Claves profundidad: https://educacionplasticayvisual.com/espacio-y-volumen/calves-de-profundidad/
+- Fundación Universitaria Área Andina. Claves Monoculares. https://www.opticaprever.com/claves.html
 
-https://crispy-ghee.tumblr.com/post/42783061352/crispys-perspective-tips-the-basics-of-drawing/amp
+- Pearson Education. Depth in Motion. https://wps.prenhall.com/wps/media/objects/803/822654/psychplace/depth/motion.html
 
-https://psych.hanover.edu/krantz/art/rel_size.html
+- crispy-ghee. Crispy’s Perspective Tips: The basics of Drawing. https://crispy-ghee.tumblr.com/post/42783061352/crispys-perspective-tips-the-basics-of-drawing/amp
 
-https://www.opticaprever.com/claves.html
+- Rail Relaxation. (2023, Marzo 11). Cab ride Bari Centrale - Taranto (Italy) train driver’s view in 4K [Video]. YouTube. https://www.youtube.com/watch?v=gDPdm2Nv26g
 
-https://wps.prenhall.com/wps/media/objects/803/822654/psychplace/depth/motion.html
+- Bryan Guilger. (2018, Enero 21). 1 HORA de Escadas Infinitas - Super Mario 64 [Video]. YouTube. https://www.youtube.com/watch?v=monPyqs9UFs
