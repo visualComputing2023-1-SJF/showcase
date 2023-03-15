@@ -62,7 +62,7 @@ Aunque Super Mario 64 es un juego en 3D, esta escena nos permite ver cómo podr�
 Bajando la siguiente pestaña se encuentra el código completo de la aplicación realizada en p5.js.
 
 {{< details "Código p5.js" close >}}
-```js
+```java
 //Listas para guardar instrancias de objetos
 let lista_pinturas_izq = []
 let lista_pinturas_der = []
@@ -77,13 +77,13 @@ function draw() {
   //Llamar la funcion que se encarga de redibujar el escenario
   dibujarFondo()
   
-  //Cada 8 Frames generar un nuevo suelo
-  if (frameCount % 8 == 1){
+  //Cada 11 Frames generar un nuevo suelo
+  if (frameCount % 11 == 1){
     lista_suelos.push(new Suelo())
   }
   
-  //Cada 40 Frames generar una nueva pintura a la izquierda y a la derecha del pasillo
-  if (frameCount % 50 == 1){
+  //Cada 48 Frames generar una nueva pintura a la izquierda y a la derecha del pasillo
+  if (frameCount % 48 == 1){
     lista_pinturas_izq.push(new PinturaIzquierda())
     lista_pinturas_der.push(new PinturaDerecha())
   }
@@ -125,12 +125,12 @@ function dibujarFondo(){
   rect(220,0,60,50)
   
   //Dibujar linea a la izquierda del camino
-  //De punto (220,50) a (100,400)
-  line(220,50,100,400)
+  //De punto (220,50) a (120,400)
+  line(220,50,120,400)
   
   //Dibujar otra linea para delimitar las escaleras
-  //De punto (280,50) a (400,400)
-  line(280,50,400,400)
+  //De punto (280,50) a (380,400)
+  line(280,50,380,400)
   
   //No tener linea limite para dibujar gradientes en las paredes
   noStroke()
@@ -151,7 +151,7 @@ function dibujarFondo(){
   for (let i = 0; i < 1; i=i+0.01){
     inter = lerpColor(from,to,i);
     fill(inter);
-    quad(actual_x,0,prev_x,0,prev_x,(-65/22)*prev_x+700,actual_x,(-65/22)*actual_x+700)
+    quad(actual_x,0,prev_x,0,prev_x,(-3.5)*prev_x+820,actual_x,(-3.5)*actual_x+820)
     actual_x = actual_x - 2.2
     prev_x = prev_x - 2.2
   }
@@ -170,7 +170,7 @@ function dibujarFondo(){
   for (let i = 0; i < 1; i=i+0.01){
     inter = lerpColor(from,to,i);
     fill(inter);
-    quad(prev_x,0,actual_x,0,actual_x,(65/22)*actual_x-(8550/11),prev_x,(65/22)*prev_x-(8550/11))
+    quad(prev_x,0,actual_x,0,actual_x,(3.5)*actual_x-(930),prev_x,(3.5)*prev_x-(930))
     actual_x = actual_x + 2.2
     prev_x = prev_x + 2.2
   }
@@ -316,26 +316,26 @@ class Suelo{
     this.x2 = 265
     //Coordenada x3
     //Valor x en esquina inferior der piso
-    this.x3 = 270
+    this.x3 = 265
     //Coordenada x4
     //Valor x en esquina inferior izq piso
-    this.x4 = 230
+    this.x4 = 235
     //Valor de color inicial 
     this.escalagris = 0
     
     //Escalon
     //Coordenada x1
     //Valor x en esquina superior izq piso
-    this.x1Escalon = 230
+    this.x1Escalon = 235
     //Coordenada x2
     //Valor x en esquina superior der piso
-    this.x2Escalon = 270
+    this.x2Escalon = 265
     //Coordenada x3
     //Valor x en esquina inferior der piso
-    this.x3Escalon = 276
+    this.x3Escalon = 270
     //Coordenada x4
     //Valor x en esquina inferior izq piso
-    this.x4Escalon = 224
+    this.x4Escalon = 230
     //Valor de color inicial 
     this.escalagrisEscalon = 0
   }
@@ -343,21 +343,23 @@ class Suelo{
   //Funcion encargada de mover las coordenadas del suelo para dar la sensación de movimiento. Entre mas cerca esta el suelo al usuario mas rapido se cambia la posición para dar un efecto parallax.
   moverse(){
     
-    //Modificacion de coordenadas de los puntos a la izquierada de los escalones
-    this.x1 = this.x1-((250 - this.x1)*0.01)
-    this.x4 = this.x4-((250 - this.x1)*0.01)
-    this.x1Escalon = this.x1Escalon-((250 - this.x1)*0.01)
-    this.x4Escalon = this.x4Escalon-((250 - this.x1)*0.01)
     
     //Modificacion de coordenadas de los puntos a la derecha de los escalones
-    this.x2 = this.x2+((250 - this.x1)*0.01)
-    this.x3 = this.x3+((250 - this.x1)*0.01)
-    this.x2Escalon = this.x2Escalon+((250 - this.x1)*0.01)
-    this.x3Escalon = this.x3Escalon+((250 - this.x1)*0.01)
+    this.x2 = this.x2+((250 - this.x1)*0.0141)
+    this.x3 = this.x3+((250 - this.x1)*0.017)
+    this.x2Escalon = this.x2Escalon+((250 - this.x1)*0.017)
+    this.x3Escalon = this.x3Escalon+((250 - this.x1)*0.016)
+    
+        //Modificacion de coordenadas de los puntos a la izquierada de los escalones
+    this.x1Escalon = this.x1Escalon-((250 - this.x1)*0.017)
+    this.x4Escalon = this.x4Escalon-((250 - this.x1)*0.016)
+    this.x4 = this.x4-((250 - this.x1)*0.017)
+    this.x1 = this.x1-((250 - this.x1)*0.0141)
+
     
     //Se aumenta el valor en escala de grises del escalon para que sea mas claro al acercarse a la persona
-    this.escalagris = this.escalagris + ((250 - this.x1)*0.009)
-    this.escalagrisEscalon = this.escalagrisEscalon +((250 - this.x1)*0.018)
+    this.escalagris = this.escalagris + ((250 - this.x1)*0.01)
+    this.escalagrisEscalon = this.escalagrisEscalon +((250 - this.x1)*0.026)
   }
   
   //La funcion yizquierda sirve para calcular el valor en el eje Y que debe tener un punto a partir de su valor en el eje X, de manera que el suelo siempre se genere siguiendo una linea recta que conecta con la pared izquierda.
@@ -370,15 +372,24 @@ class Suelo{
   return (35/12)*xderecha-(2300/3)
   }
   
+  //La funcion yizquierdaEscalon sirve para calcular el valor en el eje Y que debe tener un punto a partir de su valor en el eje X, de manera que las esquinas de los escalones siempre se generen siguiendo una linea recta que conecta con la pared izquierda.
+  yizquierdaEscalon(xizquierda){
+  return (-3.5)*xizquierda+820
+  }
+
+  //La funcion yderechaEscalon sirve para calcular el valor en el eje Y que debe tener un punto a partir de su valor en el eje X, de manera que las esquinas de los escalones siempre se generen siguiendo una linea recta que conecta con la pared derecha.
+  yderechaEscalon(xderecha){
+  return (3.5)*xderecha-(930)
+  }
+  
   //Dibujar el suelo en pantalla, esta funcion dibuja 2 cuadrilateros, uno para la parte vertical y otro para la parte horizontal del suelo.
   dibujar(){
     
  fill(this.escalagris);
-    quad(this.x1,this.yizquierda(this.x1),this.x2,this.yderecha(this.x2),this.x3,this.yderecha(this.x3),this.x4,this.yizquierda(this.x4))
+    quad(this.x1,this.yizquierdaEscalon(this.x1),this.x2,this.yderechaEscalon(this.x2),this.x3,this.yderecha(this.x3),this.x4,this.yizquierda(this.x4))
     
     fill(this.escalagrisEscalon);
-    quad(this.x1Escalon,this.yizquierda(this.x1Escalon),this.x2Escalon,this.yderecha(this.x2Escalon),this.x3Escalon,this.yderecha(this.x3Escalon),this.x4Escalon,this.yizquierda(this.x4Escalon))
-  
+    quad(this.x1Escalon,this.yizquierda(this.x1Escalon),this.x2Escalon,this.yderecha(this.x2Escalon),this.x3Escalon,this.yderechaEscalon(this.x3Escalon),this.x4Escalon,this.yizquierdaEscalon(this.x4Escalon))
   }
 }
 ```
