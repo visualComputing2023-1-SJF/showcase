@@ -104,7 +104,8 @@ function draw() {
       // Do the dot product between cameraCenter and triangleNormal and map the result to a grayscale color
       let cameraCenterVector = createVector(cameraCenter.x, cameraCenter.y, cameraCenter.z)      
       let triangleNormalVector = createVector(triangleNormal.x, triangleNormal.y, triangleNormal.z)
-      let triangleColor = map(cameraCenterVector.dot(triangleNormalVector), -1, 1, 0, 255);
+      let dotProduct = cameraCenterVector.dot(triangleNormalVector)
+      let triangleColor = map(dotProduct < 0 ? dotProduct : 0, -1, 0, 0, 255);
       
       fill(triangleColor);
       // Plot and fill the triangles with such color
