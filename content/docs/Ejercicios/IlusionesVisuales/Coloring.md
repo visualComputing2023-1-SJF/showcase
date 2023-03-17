@@ -37,6 +37,10 @@ Es importante destacar que estos tratamientos no son efectivos para todas las pe
 Teniendo en cuenta lo encontrado en estudios previos sobre el daltonismo, se aplicara corrección de color a imagenes.
 
 <div align="center">
+{{< p5-iframe sketch="/showcase/sketches/coloring/cargarImagen" width="500" height="500" >}}
+</div>
+
+<div align="center">
 {{< p5-iframe sketch="/showcase/sketches/coloring/correccionColor.js" width="400" height="400" >}}
 </div>
 
