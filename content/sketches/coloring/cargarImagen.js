@@ -22,6 +22,7 @@ function cargarImagen(file) {
     img = loadImage(file.data, function() {
       // la imagen se ha cargado correctamente
       console.log("Imagen cargada");
+      console.log(file)
 
       // establecer el tamaño del canvas
       createCanvas(img.width, img.height);
