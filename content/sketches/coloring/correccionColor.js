@@ -1,6 +1,6 @@
 let img;
 function preload() {
-    img = loadImage('/showcase/sketches/coloring/Ishihara_03.jpg');
+    img = loadImage('../../../../../showcase/sketches/coloring/Ishihara_03.jpg');
 }
 
 function corregirColor(img) {
