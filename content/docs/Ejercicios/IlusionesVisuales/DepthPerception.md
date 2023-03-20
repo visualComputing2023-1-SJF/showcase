@@ -2,7 +2,7 @@
 
 ## Introducción
 
-En este ejercicio se buscó dar la **sensación de profundidad y movimiento en un lienzo 2D** que representa una **escalera infinita**. Para lograr el efecto deseado se utilizó un punto de fuga y se modificaron distintos atributos (tamaño, color y velocidad) de los objetos en la escena de acuerdo a qué tan cerca se encuentran al espectador.
+En este ejercicio se buscó generar la **sensación de profundidad y movimiento en un lienzo 2D** que representa una **escalera infinita**. Para lograr el efecto deseado se utilizó un punto de fuga y se modificaron distintos atributos (tamaño, color y velocidad) de los objetos en la escena de acuerdo a qué tan cerca se encuentran al espectador.
 
 ## Antecedentes
 
@@ -16,7 +16,7 @@ La primera clave monocular utilizada para hacer la ilusión de profundidad en el
 Imagen tomada de [este sitio](https://crispy-ghee.tumblr.com/post/42783061352/crispys-perspective-tips-the-basics-of-drawing/amp)
 </div>
 
-La segunda clave monocular usada es el [tamaño relativo](https://psych.hanover.edu/krantz/art/rel_size.html) de los objetos. El tamaño relativo nos permite saber si un objeto está más cerca respecto a otros, esto debido a que percibimos los objetos más cercanos en un mayor tamaño.
+La segunda clave monocular usada es el [tamaño relativo](https://psych.hanover.edu/krantz/art/rel_size.html) de los objetos. El tamaño relativo nos permite saber si un objeto está más cerca respecto a otros, esto debido a que percibimos los objetos más cercanos con un mayor tamaño.
 
 <div align="center">
 <img src="/showcase/sketches/depth_perception/TamanoRelativo.jpg" alt="TamanoRelativo" style="height: 300px; width:400px;"/>
@@ -24,7 +24,7 @@ La segunda clave monocular usada es el [tamaño relativo](https://psych.hanover.
 Imagen tomada de [este sitio](https://psych.hanover.edu/krantz/art/rel_size.html)
 </div>
 
-La tercera clave monocular es la [iluminación y sombras](https://educacionplasticayvisual.com/espacio-y-volumen/calves-de-profundidad/) las cuales nos permiten ubicar los objetos en el entorno según cómo incide la luz proveniente de alguna fuente sobre ellos. Entre más cerca se encuentren a un foco de luz los objetos se ven más brillantes. En el siguiente ejemplo se puede ver cómo a partir de un foco de luz se puede dar profundidad a una obra:
+La tercera clave monocular es la [iluminación](https://educacionplasticayvisual.com/espacio-y-volumen/calves-de-profundidad/) la cual nos permiten ubicar los objetos en el entorno según cómo incide la luz proveniente de alguna fuente sobre ellos. Entre más cerca se encuentren a un foco de luz los objetos se ven más brillantes. En el siguiente ejemplo se puede ver cómo a partir de un foco de luz se puede dar profundidad a una obra.
 
 <div align="center">
 <img src="/showcase/sketches/depth_perception/LuzSombra.jpg" alt="LuzSombra" style="height: 300px; width:400px;"/>
@@ -49,7 +49,7 @@ En el minuto 29 del siguiente video se puede percibir este efecto en un tren, en
 </div>
 
 
-Un antecedente importante y del cual nos basamos para este ejercicio es la “Escalera Infinita” que ocurría en Super Mario 64, que se puede observar en el siguiente video: 
+Un antecedente importante y del cual nos basamos para este ejercicio es la “Escalera Infinita” que ocurría en Super Mario 64, que se puede observar en el siguiente video.
 
 <div align="center">
 <iframe
@@ -436,11 +436,11 @@ Finalmente, para dar una sensación de movimiento en la obra se aplica el **movi
 
 ## Conclusiones y trabajo futuro
 
-Este ejercicio permitió observar que a partir de la **perspectiva lineal**, el **tamaño relativo**, **luces**, **sombras** y el **movimiento relativo** se puede dar un efecto 3D a un cuadro en 2D. Aprovechando tanto las pistas de profundidad como de movimiento se logró generar el efecto de la escalera infinita en una animación 2D que logra aproximarse al escenario 3D visto en Super Mario 64.
+Este ejercicio permitió observar que a partir de la **perspectiva lineal**, el **tamaño relativo**, **iluminación** y el **movimiento relativo** se puede dar un efecto 3D a un cuadro en 2D. Aprovechando tanto las pistas de profundidad como de movimiento se logró generar el efecto de la escalera infinita en una animación 2D que logra aproximarse al escenario 3D visto en Super Mario 64.
 
 Viendo que es posible imitar una escena de un juego 3D por medio de las pistas de profundidad y movimiento como trabajo futuro sería interesante imitar otras escenas famosas de videojuegos por medio de un cuadro 2D.
 
-Respecto al caso específico de este ejercicio podría ser interesante añadir movimiento a voluntad del usuario, si el usuario se mueve hacia adelante con una flecha del teclado entonces se da el efecto de avanzar. Si el usuario oprime la flecha hacia abajo entonces que dar la sensación al usuario de ir hacia atrás, esto daría a la escena 2D una sensación más viva e inmersiva.
+Respecto al caso específico de este ejercicio podría ser interesante añadir movimiento a voluntad del usuario, si el usuario se mueve hacia adelante con una flecha del teclado entonces se da el efecto de avanzar. Si el usuario oprime la flecha hacia abajo entonces dar la sensación al usuario de moverse hacia atrás, esto daría a la escena 2D una sensación más viva e inmersiva.
 
 ## Bibliografia
 
