@@ -1,6 +1,12 @@
 ---
 bookCollapseSection: true
 ---
+<style>
+img{
+  margin: auto;
+  background-color: white;
+}
+</style>
 # Mach bands
 ## Introducción
 En este ejercicio se implementó un generador de terreno aleatorio usando el algoritmo de [Perlin Noise](https://adrianb.io/2014/08/09/perlinnoise.html). El terreno se colorea en escala de grises de acuerdo a su altitud. En el primer modo de coloreado, se implementa un gradiente para que la transición se haga de manera gradual. En el segundo modo de coloreado, se emplea un coloreado plano, mediante el cual se evidencia el [efecto de bandas mach](https://en.wikipedia.org/wiki/Mach_bands). Adicionalmente, se implementó otro snippet que permite comparar un coloreado plano con otro suavizado, usando el modelo de [reflexión de Phong](https://en.wikipedia.org/wiki/Phong_reflection_model). Esta última implementación se logró usando shaders. 
