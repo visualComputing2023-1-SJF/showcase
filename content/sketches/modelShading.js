@@ -57,15 +57,17 @@ function draw() {
   }
   
   if (mouseCaptured) {
+    // Escape to stop capturing mouse
     if (keyIsDown(27)) {
       mouseCaptured = false;
       exitPointerLock();
     }
+    // Space to reset the camera
     if (keyIsDown(32)){
       myCamera.setPosition(0,-20,200);
       myCamera.lookAt(0,-20,0);
     }         
-
+      
     myCamera.pan(-movedX * mouseSensitivity);
     myCamera.tilt(movedY * mouseSensitivity);
     myCamera.move(

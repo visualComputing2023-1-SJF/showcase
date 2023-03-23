@@ -37,12 +37,10 @@ function change_stroke() {
   }
 }
 
-
-
 function setup() {
   let canvas = createCanvas(800, 600, WEBGL);  
   canvas.position(5,5);  
-  checkBoxColoring = createCheckbox("Solid coloring" , false);
+  checkBoxColoring = createCheckbox("Flat coloring" , false);
   checkBoxColoring.position(10,60);
   checkBoxColoring.changed(change_coloring);
   checkBoxColoring.style('color', '#7CFC00');

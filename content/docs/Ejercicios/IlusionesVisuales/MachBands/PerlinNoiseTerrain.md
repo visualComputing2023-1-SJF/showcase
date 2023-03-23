@@ -2,7 +2,7 @@
 ## Código
 El código se divide en dos partes. La primera de ellas es la generación de terreno. El primer paso es determinar la escala que van a tener nuestros polígonos y en función de ello cálcular el número de vértices de alto y ancho que va a tener la malla polígonal, luego a cada punto se le calcula una altura aleatoria entre dos valores predefinidos, en base al algoritmo de Perlin (función noise en P5) de tal forma que el cambio de alturas sea suave. Se añade también una ilusión de movimiento usando un valor "flying" con la cual se calculan dos valores xoff y yoff que al pasarse a la función noise hacen que las alturas cambien de tal forma que parece que el terreno se estuviera desplazando hacia adelante (o que la cámara se estuviera moviendo hacia al frente).
 
-{{< details "Código p5.js" close >}}
+{{< details "Generación de las alturas con perlin noise" close >}}
 ```java
 scale = scaleSlider.value();
   cols = ceil(w / scale);
@@ -25,7 +25,7 @@ scale = scaleSlider.value();
 
 La segunda de ellas es el renderizado de la malla y la asignación de color. Para el caso del coloreado con interpolación, se empleó la figura TRIANGLE_STRIP, la cual construye una malla triangular al pasarle la sucesión de vértices,además basta con asignarle los colores a cada vértice (dados por sus alturas) para que se haga la interpolación de colores para todos los demás puntos del triángulo. El código correspondiente es el siguiente:
 
-{{< details "Código p5.js" close >}}
+{{< details "Malla coloreado interpolado" close >}}
 ```java
 for (let row = 0; row < rows; row++) {
   beginShape(TRIANGLE_STRIP);     
@@ -44,13 +44,13 @@ for (let row = 0; row < rows; row++) {
 ```
 {{< /details >}}
 
-Para el coloreado sólido se empleo la figura de TRIANGLES, a diferencia de triangle strip , no basta con pasarle la sucesión de vértices, sino que hay que decirle como construir cada uno de los triángulos. Esto hizo que se tuvieran que determinar tres casos: cuando la fila es par, cuando es impar y cuando es la fila cero. Esa construcción se puede evidenciar en la siguiente imagen.
+Para el coloreado plano se empleo la figura de TRIANGLES, a diferencia de triangle strip , no basta con pasarle la sucesión de vértices, sino que hay que decirle como construir cada uno de los triángulos. Esto hizo que se tuvieran que determinar tres casos: cuando la fila es par, cuando es impar y cuando es la fila cero. Esa construcción se puede evidenciar en la siguiente imagen.
 
 ![triangle form](/showcase/sketches/mach_bands/triangle_forms.png)
 
 Finalmente, para calcular el color de toda la cara triangular, se tomó la altura del centro geométrico del triángulo, la cuál corresponde al promedio de las tres alturas de los vértices y se mapeo al color en escala de grises correspondiente para cada cara a medida de que se iba construyendo. El código fue el siguiente:
 
-{{< details "Código p5.js" close >}}
+{{< details "Malla coloreado plano" close >}}
 ```java
 for (let row = 0; row < rows; row++) {
   beginShape(TRIANGLES);      
@@ -112,13 +112,12 @@ for (let row = 0; row < rows; row++) {
 ```
 {{< /details >}}
 
-
 ## Resultados
 
 {{< p5-iframe sketch="/showcase/sketches/perlinTerrain.js" width="600" height="600" >}} 
 
-# Conclusiones y aspectos a mejorar
+## Conclusiones y trabajo a futuro
 
-Se observa que el terreno usando el algoritmo de Perlin permite transiciones de altura suaves y añadiendo dos variables xoff y yoff se genere una sensación de movimiento a pesar de que el terreno no se está moviendo. Adicionalmente, se observa que esta transición suave se traduce a un gradiente suave cuando se usa el coloreado sólido, lo que da origen a un efecto de bandas Mach.
+Se observa que en la generación de terreno que usa el algoritmo de Perlin, se presentan transiciones de altura suaves, que con la adición dos variables: xoff y yoff, generan una ilusión de movimiento a pesar de que el terreno ni la cámara se están desplazando. Adicionalmente, se observa que esta transición suave se traduce a un gradiente de colores en escala de grises suave, cuando se usa el coloreado plano, lo que da origen a un efecto de bandas Mach.
 
-Para una futura versión del programa, se podría hacer un movimiento de cámara dinámico que permitiera moverse en varias dimensiones y que el terreno responda de tal manera que se siga manteniendo la ilusión de desplazamiento.
+Para una futura versión del programa, se podría implementar un movimiento de cámara dinámico que permita movimientos de traslación y rotación. El terreno tendría que responder de tal manera que se siga manteniendo la ilusión de desplazamiento.
