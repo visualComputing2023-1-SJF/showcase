@@ -1,4 +1,6 @@
 # Phong Reflection
+## Propuesta 
+Para este ejemplo se propone realizar un programa que permita evidenciar el modelo de iluminación de Phong con coloreado por interpolación y coloreado plano mediante shaders, sobre un modelo 3d en formato ".obj". En este último coloreado se evidenciará un efecto de bandas Mach.
 ## Código
 En este código se destacan tres aspectos. 
 En primer lugar la forma para cargar un modelo 3d en formato .obj , el cual contiene información de la posición de los vértices, texturas y vectores normales, entre otros. Y en tercer lugar la forma de cargar un shader en p5, el cuál se compone de dos archivos: uno .vert que contiene información de los vértices del modelo y otro .frag que le indica a WEBGL como realizar el rasterizado y colorear la imagen generada.
@@ -140,6 +142,8 @@ void main() {
 }
 ```
 {{< /details>}}
+
+Cabe resaltar que los shaders mostrados anteriormente, son modificaciones de los shaders presentados por [Adam Ferriss](https://github.com/aferriss/p5jsShaderExamples) y por [SubOptimal Engineer](https://github.com/SuboptimalEng/shader-tutorials)
 
 ## Resultados
 {{< p5-iframe sketch="/showcase/sketches/modelShading.js" width="600" height="600" >}} 

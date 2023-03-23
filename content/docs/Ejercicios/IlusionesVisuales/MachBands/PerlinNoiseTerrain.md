@@ -1,4 +1,6 @@
 # PerlinNoiseTerrain
+## Propuesta 
+Para este ejemplo se genera un terreno usando el algoritmo de Perlin para generar alturas aleatorias sobre una malla poligonal. Se emplearan dos medios de coloreado uno por interpolación y otro plano, donde en este último se evidenciará el efecto de bandas Mach.
 ## Código
 El código se divide en dos partes. La primera de ellas es la generación de terreno. El primer paso es determinar la escala que van a tener nuestros polígonos y en función de ello cálcular el número de vértices de alto y ancho que va a tener la malla polígonal, luego a cada punto se le calcula una altura aleatoria entre dos valores predefinidos, en base al algoritmo de Perlin (función noise en P5) de tal forma que el cambio de alturas sea suave. Se añade también una ilusión de movimiento usando un valor "flying" con la cual se calculan dos valores xoff y yoff que al pasarse a la función noise hacen que las alturas cambien de tal forma que parece que el terreno se estuviera desplazando hacia adelante (o que la cámara se estuviera moviendo hacia al frente).
 
