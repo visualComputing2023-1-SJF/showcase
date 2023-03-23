@@ -2,10 +2,12 @@
 title: Introduction
 type: docs
 ---
-# Sobre este proyecto   
-Esta página tiene como objetivo mostrar los proyectos desarrollados en el curso de Computación Visual en el periodo 2023-2.  
+# Bienvenid@s a la página del grupo Visual Computing 2023-1 SJF.  
 
-# Sobre el equipo
-- Santiago Cassiano Rozo:
-- Julián Camilo Alfonso Carrillo:
-- Fabian Camilo Castro Lozano:
+Esta página tiene como objetivo mostrar los ejercicios desarrollados en el curso de Computación Visual por Santiago Cassiano Rozo, Julián Camilo Alfonso Carrillo y Fabian Camilo Castro Lozano.
+ 
+En la sección **Acerca Del Equipo** de la página podrás encontrar información sobre cada uno de los integrantes del equipo y sobre este proyecto.
+
+En la sección **Ejercicios** se encuentran las actividades que hemos realizado a lo largo del semestre.
+
+Dentro de este apartado se encuentran los ejercicios del tema **Ilusiones Visuales**, en donde desarrollamos actividades sobre los temas Coloring, Depth Perception y Mach Bands.

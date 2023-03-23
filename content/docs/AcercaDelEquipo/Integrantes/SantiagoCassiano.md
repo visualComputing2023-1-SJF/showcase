@@ -1,6 +1,6 @@
 # Santiago Cassiano Rozo
 
-Estudiante de Ingeniería de Sistemas y COmputación de la Universidad Nacional de Colombia.
+Estudiante de Ingeniería de Sistemas y Computación de la Universidad Nacional de Colombia.
 
 
 Me interesa el desarrollo de aplicaciones web y videojuegos.

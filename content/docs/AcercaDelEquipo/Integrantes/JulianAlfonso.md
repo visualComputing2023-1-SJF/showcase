@@ -1,4 +1,3 @@
 # Julián Camilo Alfonso Carrillo
 
-
-Estudiante de ingeniería de sistemas y computación en la Universidad Nocional de Colombia.
+Estudiante de Ingeniería de Sistemas y Computación en la Universidad Nacional de Colombia.
