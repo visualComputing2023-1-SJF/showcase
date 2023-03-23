@@ -48,5 +48,11 @@ En tercer lugar se analiza la luz especular, que es la luz reflejada que llega a
 
 ![specular light normal](/showcase/sketches/mach_bands/specular_normal.png)
 
+Finalmente, todos los efectos se suman y el color obtenido es asignado al vértice del modelo correspondiente. 
+
+![phong total equation](/showcase/sketches/mach_bands/phong_total.png)
+
+Después de ello, mediante un frag shader, se hace una interpolación para hallar los colores de los demás pixeles de la imagen.
+
 # Bibliografía
 
