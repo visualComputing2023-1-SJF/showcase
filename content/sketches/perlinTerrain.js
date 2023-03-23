@@ -1,9 +1,7 @@
 let cols, rows;
 let scale;
-//let w =  1300;
-//let h = 800;
-let w =  700;
-let h = 500;
+let w =  1300;
+let h = 800;
 let lowest = -100;
 let highest = 100;
 let checkBoxColoring;
