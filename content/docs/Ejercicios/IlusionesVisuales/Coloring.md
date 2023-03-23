@@ -34,18 +34,107 @@ Es importante destacar que estos tratamientos no son efectivos para todas las pe
 
 ## Metodologia y Código
 
-Teniendo en cuenta lo encontrado en estudios previos sobre el daltonismo, se aplicara corrección de color a imagenes.
+Teniendo en cuenta lo encontrado en estudios previos sobre el daltonismo, se aplicara corrección de color a imágenes, para personas que tengan deuteranopia, dado que es tipo más común de daltonismo.
 
-<div align="center">
-{{< p5-iframe sketch="/showcase/sketches/coloring/cargarImagen.js" width="500" height="500" >}}
-</div>
+Desplegando la siguiente pestaña se encuentra el código completo de la aplicación realizada en p5.js.
 
-<div align="center">
-{{< p5-iframe sketch="/showcase/sketches/coloring/correccionColor.js" width="400" height="400" >}}
-</div>
+{{< details "Código p5.js" close >}}
+```java
+
+//Variables para cargar la imagen
+let img;
+let input;
+
+function setup() {
+  // crear el elemento de entrada de archivo
+  input = createFileInput(cargarImagen);
+  input.hide(); // ocultar el elemento de entrada de archivo
+
+  // crear el botón
+  let btn = createButton("Seleccionar imagen");
+  btn.mousePressed(seleccionarImagen);
+  btn.position(0, 0); // establecer la posición del botón
+}
+
+function seleccionarImagen() {
+  // hacer clic en el elemento de entrada de archivo
+  input.elt.click();
+}
+
+function cargarImagen(file) {
+  // cargar la imagen
+  if (file.type === "image") {
+    img = loadImage(file.data, function() {
+      // la imagen se ha cargado correctamente
+      console.log("Imagen cargada");
+
+      // establecer el tamaño del canvas
+      createCanvas(img.width, img.height);
+      //Aplicar la correccion de color a la imagen
+      corregirColor(img);
+    });
+  } else {
+    console.log("No se ha seleccionado una imagen");
+  }
+}
+
+function corregirColor(img) {
+    //Cargar datos de color por pixel en un array
+    img.loadPixels();
+    //Iteracion por el array 
+    for (let i = 0; i < img.pixels.length; i += 4) {
+        let r = img.pixels[i];
+        let g = img.pixels[i + 1];
+        let b = img.pixels[i + 2];
+        let a = img.pixels[i + 3];
+
+        let nuevaR = r + g * 0.1 + b * 0.1; //Aumenta el color rojo
+        let nuevaG = g * 0.2; //Reduce el color verde
+        let nuevaB = b + g * 0.1 + r * 0.1; //Aumenta el color azul
+        //Asignar nuevos calores al arreglo
+        img.pixels[i] = nuevaR;
+        img.pixels[i + 1] = nuevaG;
+        img.pixels[i + 2] = nuevaB;
+        img.pixels[i + 3] = a;
+    }
+    //Actualización pixeles de la imagen con los nuevos valores
+    img.updatePixels();
+}
+
+function draw() {
+  // dibujar la imagen si ha sido cargada
+  if (img) {
+    image(img, 0, 0);
+  }
+}
+
+
+
+```
+{{< /details >}}
+
+El código funciona de la siguiente manera:
+
+1. Se carga la imagen desde el almacenamiento local del equipo.
+
+Primero se declaran dos variables **img** y **input**, para almacenar la imagen cargada. La función **setup()** es una función predefinida de p5.js, la cual se ejecutada una vez cuando el programa empieza. En esta función se le asigna a **input** el metodo **createFileInput()** que abre un elemento de entrada del sistema para elegir un archivo del almacenamiento local.
+
+2. Una vez cargada la imagen se le aplica la corrección de color.
+
+3. Se muestra la imagen usando con la corrección de color.
+
+La función **corregirColor()** toma la imagen como argumento y aplica una técnica de corrección de color para mejorar su visibilidad para personas con deuteranopia. En este caso, se recorre cada píxel de la imagen y se ajusta su valor de rojo, verde y azul. Se aumenta el valor rojo proporcional al valor de verde y azul, igualmente se aumenta el valor azul proporcional al rojo y verde, y el verde se reduce un 80%. 
+Luego, se actualiza la imagen con los nuevos valores de píxeles mediante la función **updatePixels()**.
+
 
 
 ## Resultados
+
+Por favor, use el botón "Seleccionar imagen" para escoger una imagen almacenada en su equipo a la que le quiera aplicar la corrección de color.
+
+<div align="center">
+{{< p5-iframe sketch="/showcase/sketches/coloring/cargarImagen.js" width="600" height="600" >}}
+</div>
 
 ## Conclusiones y trabajo futuro
 
