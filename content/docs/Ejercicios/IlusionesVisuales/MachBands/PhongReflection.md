@@ -146,4 +146,6 @@ void main() {
 
 ## Conclusiones y trabajo a futuro
 
-Se observa que el trabajo con shaders facilita la implementación de algoritmos de iluminación como el de Phong, consiguiendo buenos resultados sin necesidad de crear la geometría 
+Se observa que el trabajo con shaders facilita la implementación de algoritmos de iluminación como el de Phong o uno de coloreado sólido. Al momento de implementar el shader de coloreado plano, se observa que la iluminación también depende de hacia donde está enfocando la cámara, debido principalmente a que las derivadas parciales se calculan en función de esta variable, por lo que convendría encontrar una implementación que no necesitara de esta.
+
+En general se consigue que mediante shaders se consiguen resultados más óptimos a nivel de recursos y sin la necesidad de crear la geometría directamente en p5. En implementaciones futuras se podría combinar con técnicas de renderizado como z-culling para mostrar escenas más complejas.
