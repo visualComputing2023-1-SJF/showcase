@@ -115,18 +115,11 @@ function draw() {
 
 El código funciona de la siguiente manera:
 
-1. Se carga la imagen desde el almacenamiento local del equipo.
+Primero se declaran dos variables `img` y `input`, para almacenar la imagen cargada. La función `setup()` es una función predefinida de p5.js, la cual se ejecutada una vez cuando el programa empieza. En esta función se le asigna a `input` el metodo `createFileInput()` que abre un elemento de entrada del sistema para elegir un archivo del almacenamiento local y se le pasa como parametro la función `cargarIgmagen` la cual verifica que el archivo sea de tipo imagen y de ser así, asigna la imagen a la variable `img`, crea el canvas con las dimensiones de la imagen y se llama l funcion `corregirColor()` para aplicársela a la imagen.
 
-Primero se declaran dos variables **img** y **input**, para almacenar la imagen cargada. La función **setup()** es una función predefinida de p5.js, la cual se ejecutada una vez cuando el programa empieza. En esta función se le asigna a **input** el metodo **createFileInput()** que abre un elemento de entrada del sistema para elegir un archivo del almacenamiento local.
-
-2. Una vez cargada la imagen se le aplica la corrección de color.
-
-3. Se muestra la imagen usando con la corrección de color.
-
-La función **corregirColor()** toma la imagen como argumento y aplica una técnica de corrección de color para mejorar su visibilidad para personas con deuteranopia. En este caso, se recorre cada píxel de la imagen y se ajusta su valor de rojo, verde y azul. Se aumenta el valor rojo proporcional al valor de verde y azul, igualmente se aumenta el valor azul proporcional al rojo y verde, y el verde se reduce un 80%. 
-Luego, se actualiza la imagen con los nuevos valores de píxeles mediante la función **updatePixels()**.
-
-
+La función `corregirColor()` toma la imagen como argumento y aplica una técnica de corrección de color para mejorar su visibilidad para personas con deuteranopia. En este caso, se recorre cada píxel de la imagen y se ajusta su valor de rojo, verde y azul. Se aumenta el valor rojo proporcional al valor de verde y azul, igualmente se aumenta el valor azul proporcional al rojo y verde, y el verde se reduce un 80%. 
+Luego, se actualiza la imagen con los nuevos valores de píxeles mediante la función ``updatePixels()``.
+Por último se usa la función `draw()` para dibujar la imagen cargada en el canvas, solo si está ya ha sido cargada.
 
 ## Resultados
 
@@ -136,15 +129,46 @@ Por favor, use el botón "Seleccionar imagen" para escoger una imagen almacenada
 {{< p5-iframe sketch="/showcase/sketches/coloring/cargarImagen.js" width="600" height="600" >}}
 </div>
 
+En este ejercicio se permite al usuario con deuteranopia elegir la imagen a la cual le quiere realizar la corrección de color, desde el almacenamiento local de su equipo.
+
+Para corroborar la funcionalidad de la corrección de color aplicada se hizo uso de una aplicación móvil, llamada **CVSimulator** obtenida de la Play Store para un dispositivo Android. La cual permite simular el cómo vería una persona con daltonismo, para este ejercicio, se hizo uso de la opción de deuteranopia. 
+
+A continuación se muestra una lámina del Test de Ishihara como la vería una persona sin daltonismo.
+
+<div align="center">
+<img src="/showcase/sketches/coloring/Ishihara_04.jpg" alt="Lamina Ishihara"/>
+Lamina de Ishihara tomada de [este sitio](https://www.es.colorlitelens.com/Ishihara-test-de-daltonismo)
+</div>
+
+Y ahora como la vería una persona con deuteranopia (el tipo más común de daltonismo) usando la aplicación.
+
+<div align="center">
+<img src="/showcase/sketches/coloring/CVS_SinFiltro.jpg" alt="Ishihara sin filtro"/>
+Lamina de Ishihara vista usando la aplicación CVSimulator.
+</div>
+
+En la anterior imagen el número 2 que podría distinguir una persona sin daltonismo ya no se distingue.
+
+Ahora se mostrara la misma lamina vista usando la aplicación, pero a la lámina ya se le ha aplicado la corrección de color.
+
+<div align="center">
+<img src="/showcase/sketches/coloring/CVS_ConFiltro.jpg" alt="Ishihara con filtro"/>
+Lamina de Ishihara vista usando la aplicación CVSimulator.
+</div>
+
+En la anterior imagen se puede ver como una vez se aplica la corrección de color, el número 2 se podría distinguir por una persona con deuteranopia.
+
 ## Conclusiones y trabajo futuro
+
+En la actualidad, existen varias aplicaciones y programas, como CVSimulator (utilizada en este trabajo), que permiten simular cómo ve una persona con daltonismo. Estas herramientas resultan muy útiles para comprender cómo perciben el mundo las personas que padecen esta condición. Es importante que aquellas personas encargadas de crear imágenes, videos, diseños de páginas web o sistemas informáticos las utilicen para garantizar la inclusión de las personas con daltonismo. De esta manera, podrán elegir colores que permitan a todos los usuarios entender el contenido que se quiere transmitir.
+
+Sin embargo, en el mundo real no siempre es posible adaptarse de esta forma. Aunque las gafas para daltónicos son una excelente herramienta, este trabajo ofrece una alternativa que no requiere de ellas. Se trata del uso de un dispositivo móvil, que es muy común hoy en día. Basta con tomar una foto del objeto o escena que una persona con deuteranopia desea corregir el color, cargarla en la página y obtener el resultado deseado. De esta forma, se elimina la necesidad de contar con las gafas especiales y se logra una solución práctica y accesible.
+
+Para un futuro es interesante expandir el trabajo e incluir una solución para los demas tipos de daltonismo. Incluso seria mejor realizar un programa similar a CVSimulator, pero que en vez de simular el daltonismo permita aplicar la corrección de color en tiempo real por medio del uso de la camara del dispositivo.
 
 ## Bibliografía
 
-- Birch J. Worldwide prevalence of red-green color deficiency. J Opt Soc Am A Opt Image Sci Vis. 2012;29(3):313-320. doi:10.1364/JOSAA.29.000313
-- Carroll J, Neitz M, Neitz J. Estimates of L:M cone ratio from ERG flicker photometry and genetics. J Vis. 2002;2(8):531-542. doi:10.1167/2.8.5
-- Neitz J, Neitz M. The genetics of normal and defective color vision. Vision Res. 2011;51(7):633-651. doi:10.1016/j.visres.2010.12.002
-- J. J. Hidalgo, M. R. González, J. M. Rodríguez, and E. Martínez, "Correction of color images for color vision deficiency," IEEE Transactions on Visualization and Computer Graphics, vol. 20, no. 4, pp. 599-610, Apr. 2014. DOI: 10.1109/TVCG.2013.245.
-- K. Komatsu, N. Shimizu, T. Kiyomitsu, and T. Koyama, "A filter for correcting color blindness in computer graphics," Optics Express, vol. 6, no. 5, pp. 163-168, Mar. 2000. DOI: 10.1364/OE.6.000163.
+
 
 
 
