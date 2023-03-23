@@ -136,14 +136,16 @@ Para corroborar la funcionalidad de la corrección de color aplicada se hizo uso
 A continuación se muestra una lámina del Test de Ishihara como la vería una persona sin daltonismo.
 
 <div align="center">
-<img src="/showcase/sketches/coloring/Ishihara_04.jpg" alt="Lamina Ishihara"/>
+<img src="/showcase/sketches/coloring/Ishihara_04.jpg" alt="Lamina Ishihara" style="height: 500px; width:500px;"/>
+
 Lamina de Ishihara tomada de [este sitio](https://www.es.colorlitelens.com/Ishihara-test-de-daltonismo)
 </div>
 
 Y ahora como la vería una persona con deuteranopia (el tipo más común de daltonismo) usando la aplicación.
 
 <div align="center">
-<img src="/showcase/sketches/coloring/CVS_SinFiltro.jpg" alt="Ishihara sin filtro"/>
+<img src="/showcase/sketches/coloring/CVS_SinFiltro.jpg" alt="Ishihara sin filtro" style="height: 500px; width:500px;"/>
+
 Lamina de Ishihara vista usando la aplicación CVSimulator.
 </div>
 
@@ -152,7 +154,8 @@ En la anterior imagen el número 2 que podría distinguir una persona sin dalton
 Ahora se mostrara la misma lamina vista usando la aplicación, pero a la lámina ya se le ha aplicado la corrección de color.
 
 <div align="center">
-<img src="/showcase/sketches/coloring/CVS_ConFiltro.jpg" alt="Ishihara con filtro"/>
+<img src="/showcase/sketches/coloring/CVS_ConFiltro.jpg" alt="Ishihara con filtro" style="height: 500px; width:500px;"/>
+
 Lamina de Ishihara vista usando la aplicación CVSimulator.
 </div>
 
