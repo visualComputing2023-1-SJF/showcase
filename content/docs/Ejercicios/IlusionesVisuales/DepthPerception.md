@@ -69,7 +69,7 @@ Aunque Super Mario 64 es un juego en 3D, esta escena nos permite ver cómo podr�
 
 Bajando la siguiente pestaña se encuentra el código completo de la aplicación realizada en p5.js.
 
-{{< details "Código p5.js" close >}}
+{{< details "Código completo en p5.js" close >}}
 ```java
 //Listas para guardar instrancias de objetos
 let lista_pinturas_izq = []
@@ -144,9 +144,9 @@ function dibujarFondo(){
   noStroke()
   
   //Dibujar pared izquierda con un gradiente
-  //Color de inicio al fondo
+  //Color de inicio al fondo de la pared
   let from = color(28, 15, 6)
-  //Color de llegada
+  //Color más cercano del gradiente
   let to = color(125, 68, 25)
   //Variable para guardar el color intermedio
   let inter
@@ -167,7 +167,7 @@ function dibujarFondo(){
   //Dibujar pared derecha con un gradiente
   //Color de inicio al fondo
   from = color(28, 15, 6)
-  //Color de llegada
+  //Color más cercano del gradiente
   to = color(84, 43, 22)
   //Posicion esquina superior izquierda del cuadrilatero para el gradiente
   prev_x = 280
@@ -213,7 +213,7 @@ class PinturaIzquierda {
     this.x4 = 220
     this.y4 = 10
     
-    //Variables para el color:
+    //Variables para el color del cuadro:
     this.red = 0
     this.green = 0
     this.blue = 0
@@ -222,8 +222,7 @@ class PinturaIzquierda {
   //Funcion encargada de mover los puntos de la pintura y modificar su color para dar la sensación de acercamiento
   moverse(){
     
-    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a la persona
-    //Esto para dar un efecto parallax
+    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a los bordes del lienzo
     
     this.x1 = this.x1-((250-this.x1)*0.024)
     this.y1 = this.y1+((250-this.x1)*0.016)
@@ -241,7 +240,7 @@ class PinturaIzquierda {
     this.red = this.red + ((250-this.x1)*0.013)
   }
   
-  //Funcion encargada de dibujar el cuadro en cada frame
+  //Funcion encargada de dibujar la pintura en cada frame
   dibujar(){
  fill(this.red,this.green,this.blue)
     quad(this.x1,this.y1,this.x2,this.y2,this.x3,this.y3,this.x4,this.y4)
@@ -274,7 +273,7 @@ class PinturaDerecha {
     this.x4 = 255
     this.y4 = 10
     
-    //Variables para el color:
+    //Variables para el color del cuadro:
     this.red = 0
     this.green = 0
     this.blue = 0
@@ -283,9 +282,7 @@ class PinturaDerecha {
   //Funcion encargada de mover los puntos de la pintura y cambiar el color del cuadro para dar la sensación de acercamiento
   moverse(){
     
-    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a la persona
-    //Esto para dar un efecto paralax
-    
+    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a los bordes del lienzo
     this.x1 = this.x1+((this.x2-250)*0.016)
     this.y1 = this.y1+((this.x2-250)*0.016)
     
@@ -302,7 +299,7 @@ class PinturaDerecha {
     this.red = this.red + ((this.x2-250)*0.013)
   }
   
-  //Funcion encargada de dibujar el cuadro en cada frame
+  //Funcion encargada de dibujar la pintura en cada frame
   dibujar(){
  fill(this.red,this.green,this.blue)
     quad(this.x1,this.y1,this.x2,this.y2,this.x3,this.y3,this.x4,this.y4)
@@ -348,7 +345,7 @@ class Suelo{
     this.escalagrisEscalon = 0
   }
   
-  //Funcion encargada de mover las coordenadas del suelo para dar la sensación de movimiento. Entre mas cerca esta el suelo al usuario mas rapido se cambia la posición para dar un efecto parallax.
+  //Funcion encargada de mover las coordenadas del suelo para dar la sensación de movimiento. Entre mas cerca esta el suelo o escalon al usuario mas rapido se cambia su posición.
   moverse(){
     
     
@@ -407,17 +404,152 @@ Los aspectos a resaltar del código son los siguientes:
 
 Se tiene el método **dibujarFondo()** encargado de dibujar elementos que no cambian de posición durante la animación. En este método se dibuja un fondo blanco para generar un nuevo cuadro en la animación. También se dibujan las paredes con un gradiente el cual hace más oscura la pared a medida que se acerca más al fondo del pasillo que es representado por un cuadro negro. 
 
+{{< details "Código método dibujarFondo() en p5.js" close >}}
+```java
+//Funcion encargada de dibujar el fondo en cada frame, para poder realizar una animacion
+function dibujarFondo(){
+  
+  //Fondo blanco
+  background(255)
+  
+  //Dibujar rectangulo negro en la posicion del punto de fuga
+  fill(0)
+  rect(220,0,60,50)
+  
+  //Dibujar linea a la izquierda del camino
+  //De punto (220,50) a (120,400)
+  line(220,50,120,400)
+  
+  //Dibujar otra linea para delimitar las escaleras
+  //De punto (280,50) a (380,400)
+  line(280,50,380,400)
+  
+  //No tener linea limite para dibujar gradientes en las paredes
+  noStroke()
+  
+  //Dibujar pared izquierda con un gradiente
+  //Color de inicio al fondo de la pared
+  let from = color(28, 15, 6)
+  //Color más cercano del gradiente
+  let to = color(125, 68, 25)
+  //Variable para guardar el color intermedio
+  let inter
+  //Posicion esquina superior izquierda del cuadrilatero para el gradiente
+  let actual_x = 217
+  //Posicion esquina superior derecha del cuadrilatero para el gradiente
+  let prev_x = 220
+  
+  //Se generan cuadrilateros de colores desde el color inicial, hasta el color final 
+  for (let i = 0; i < 1; i=i+0.01){
+    inter = lerpColor(from,to,i);
+    fill(inter);
+    quad(actual_x,0,prev_x,0,prev_x,(-3.5)*prev_x+820,actual_x,(-3.5)*actual_x+820)
+    actual_x = actual_x - 2.2
+    prev_x = prev_x - 2.2
+  }
+  
+  //Dibujar pared derecha con un gradiente
+  //Color de inicio al fondo
+  from = color(28, 15, 6)
+  //Color más cercano del gradiente
+  to = color(84, 43, 22)
+  //Posicion esquina superior izquierda del cuadrilatero para el gradiente
+  prev_x = 280
+  //Posicion esquina superior izquierda del cuadrilatero para el gradiente
+  actual_x = 283
+  
+  //Se generan cuadrilateros de colores desde el color inicial, hasta el color final 
+  for (let i = 0; i < 1; i=i+0.01){
+    inter = lerpColor(from,to,i);
+    fill(inter);
+    quad(prev_x,0,actual_x,0,actual_x,(3.5)*actual_x-(930),prev_x,(3.5)*prev_x-(930))
+    actual_x = actual_x + 2.2
+    prev_x = prev_x + 2.2
+  }
+  
+  //Modificar variable global para que se vuelvan a dibujar lineas en los bordes
+  stroke(0)
+}
+```
+{{< /details >}}
+
 Se hicieron **3 clases** para representar los elementos que tienen movimiento en la escena, estas clases son **“PinturaIzquierda”, “PinturaDerecha” y “Suelo”**. Cada cierta cantidad de frames se genera una nueva instancia de estas clases, de esta manera se logra hacer que la animación sea infinita.
 
 En estas clases los métodos más importantes son los **constructores**, los métodos **moverse()** y **dibujar()**.
 
-En los **constructores** se inicializan los atributos de color y coordenadas de ubicación de las pinturas y los suelos. Cada instancia se crea de manera que su escala sea pequeña y su color sea oscuro, de manera que se dé la sensación de que surgen a partir del punto más lejano en el pasillo donde se encuentra el camino infinito. 
+En los **constructores** se inicializan los atributos de color y coordenadas de ubicación de las pinturas y los suelos. Cada instancia se crea de manera que su escala sea pequeña y su color sea oscuro, de manera que se dé la sensación de que surgen a partir del punto más lejano en el pasillo donde se encuentra el camino infinito. A continuación se muestra el constructor de la clase PinturaIzquierda.
 
-Los **métodos moverse()** hacen que en cada frame las instancias modifiquen sus valores de color y las coordenadas en las que se ubican en el espacio de manera que se de una sensación de movimento en la escena. En general en este método se modifican los atributos de las pinturas y los suelos para que su tamaño incremente y sus colores sean más claros al acercarse a los bordes del lienzo.
+{{< details "Código constructor de la clase PinturaIzquierda en p5.js" close >}}
+```java
+ constructor() {
+    //Coordenadas x1,y1
+    //Valor x,y en esquina superior izq
+    this.x1 = 220
+    this.y1 = -25
+    
+    //Coordenada x2,y2
+    //Valor x,y en esquina superior der
+    this.x2 = 245
+    this.y2 = -20
+    
+    //Coordenada x3,y3
+    //Valor x,y en esquina inferior der
+    this.x3 = 245
+    this.y3 = 5
+    
+    //Coordenada x4,y4
+    //Valor x,y en esquina inferior izq
+    this.x4 = 220
+    this.y4 = 10
+    
+    //Variables para el color del cuadro:
+    this.red = 0
+    this.green = 0
+    this.blue = 0
+  }
+```
+{{< /details >}}
 
-Los **métodos dibujar()** hacen que cada instancia de las pinturas y los suelos en la escena se dibujen en el lienzo de acuerdo a los atributos que poseen individualmente en cada frame. 
+Los **métodos moverse()** hacen que en cada frame las instancias modifiquen sus valores de color y las coordenadas en las que se ubican en el espacio de manera que se de una sensación de movimento en la escena. En general en este método se modifican los atributos de las pinturas y los suelos para que su tamaño incremente y sus colores sean más claros al acercarse a los bordes del lienzo. Como ejemplo a continuación se muestra el método moverse() de la clase PinturaIzquierda.
 
-Finalmente, cabe resaltar que las instancias de pinturas y suelos que se visualizan en la animación se encuentran en listas que se recorren para llamar los métodos moverse() y dibujar() de cada objeto en los frames de la animación.
+{{< details "Código método moverse() de la clase PinturaIzquierda en p5.js" close >}}
+```java
+//Funcion encargada de mover los puntos de la pintura y modificar su color para dar la sensación de acercamiento
+  moverse(){
+    
+    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a los bordes del lienzo
+    
+    this.x1 = this.x1-((250-this.x1)*0.024)
+    this.y1 = this.y1+((250-this.x1)*0.016)
+  
+    this.x2 = this.x2-((250-this.x1)*0.016)
+    this.y2 = this.y2+((250-this.x1)*0.016)
+    
+    this.x3 = this.x3-((250-this.x1)*0.016)
+    this.y3 = this.y3+((250-this.x1)*0.024)
+    
+    this.x4 = this.x4-((250-this.x1)*0.024)
+    this.y4 = this.y4+((250-this.x1)*0.032)
+    
+    //Aumentar el color rojo al moverse
+    this.red = this.red + ((250-this.x1)*0.013)
+  }
+```
+{{< /details >}}
+
+Los **métodos dibujar()** hacen que cada instancia de las pinturas y los suelos en la escena se dibujen en el lienzo de acuerdo a los atributos que poseen individualmente en cada frame. Como ejemplo a continuación se muestra el método dibujar() de la clase PinturaIzquierda.
+
+{{< details "Código método dibujar() de la clase PinturaIzquierda en p5.js" close >}}
+```java
+  //Funcion encargada de dibujar la pintura en cada frame
+  dibujar(){
+ fill(this.red,this.green,this.blue)
+    quad(this.x1,this.y1,this.x2,this.y2,this.x3,this.y3,this.x4,this.y4)
+  }
+```
+{{< /details >}}
+
+Finalmente, cabe resaltar que las instancias de pinturas y suelos que se visualizan en la animación se encuentran en listas que se recorren para llamar los métodos moverse() y dibujar() de cada objeto en cada uno de los frames de la animación. Para que la animación no se vuelva más lenta con el paso del tiempo por la cantidad de instancias creadas en la ejecución, en cada frame se eliminan de las listas los objetos que dejan de visualizarse en el lienzo.
 
 ## Resultados
 La animación generada con el código es la siguiente:
@@ -430,7 +562,7 @@ Se utilizó la **perspectiva lineal** con un punto de fuga que se encuentra al f
 
 Por otra parte se usó el **tamaño relativo** de los objetos para dar una sensación de profundidad. Por ejemplo, los cuadros rojos (Pinturas) y el suelo se vuelven más grandes a medida que se acercan al final del lienzo.
 
-También cabe resaltar que para dar una sensación de profundidad se intentó simular **iluminación** en la escena haciendo que los objetos más lejanos al espectador sean más oscuros. Por ejemplo las pinturas cuando estan cerca al punto de fuga tienen un color cercano al negro, pero a medida que se acercan adquieren un color rojo.
+También cabe resaltar que para dar una sensación de profundidad se intentó simular **iluminación** en la escena haciendo que los objetos más lejanos al espectador sean más oscuros. Por ejemplo las pinturas cuando estan cerca al punto de fuga tienen un color cercano al negro, pero a medida que se acercan al espectador adquieren un color rojo.
 
 Finalmente, para dar una sensación de movimiento en la obra se aplica el **movimiento relativo** al hacer que los objetos que se encuentran más cercanos se muevan de manera más rápida respecto a los que se encuentran en el fondo, buscando dar al usuario la sensación de que está recorriendo dicha escalera.
 
@@ -440,7 +572,7 @@ Este ejercicio permitió observar que a partir de la **perspectiva lineal**, el 
 
 Viendo que es posible imitar una escena de un juego 3D por medio de las pistas de profundidad y movimiento como trabajo futuro sería interesante imitar otras escenas famosas de videojuegos por medio de un cuadro 2D.
 
-Respecto al caso específico de este ejercicio podría ser interesante añadir movimiento a voluntad del usuario, si el usuario se mueve hacia adelante con una flecha del teclado entonces se da el efecto de avanzar. Si el usuario oprime la flecha hacia abajo entonces dar la sensación al usuario de moverse hacia atrás, esto daría a la escena 2D una sensación más viva e inmersiva.
+Respecto al caso específico de este ejercicio podría ser interesante añadir movimiento a voluntad del usuario, si el usuario se mueve hacia adelante con una flecha del teclado entonces se da el efecto de avanzar. Si el usuario oprime la flecha hacia abajo entonces dar la sensación al usuario de moverse hacia atrás, esto daría a la escena 2D una sensación más viva e interactiva.
 
 ## Bibliografia
 

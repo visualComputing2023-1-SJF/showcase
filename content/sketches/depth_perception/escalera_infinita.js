@@ -71,9 +71,9 @@ function dibujarFondo(){
   noStroke()
   
   //Dibujar pared izquierda con un gradiente
-  //Color de inicio al fondo
+  //Color de inicio al fondo de la pared
   let from = color(28, 15, 6)
-  //Color de llegada
+  //Color más cercano del gradiente
   let to = color(125, 68, 25)
   //Variable para guardar el color intermedio
   let inter
@@ -94,7 +94,7 @@ function dibujarFondo(){
   //Dibujar pared derecha con un gradiente
   //Color de inicio al fondo
   from = color(28, 15, 6)
-  //Color de llegada
+  //Color más cercano del gradiente
   to = color(84, 43, 22)
   //Posicion esquina superior izquierda del cuadrilatero para el gradiente
   prev_x = 280
@@ -140,7 +140,7 @@ class PinturaIzquierda {
     this.x4 = 220
     this.y4 = 10
     
-    //Variables para el color:
+    //Variables para el color del cuadro:
     this.red = 0
     this.green = 0
     this.blue = 0
@@ -149,8 +149,7 @@ class PinturaIzquierda {
   //Funcion encargada de mover los puntos de la pintura y modificar su color para dar la sensación de acercamiento
   moverse(){
     
-    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a la persona
-    //Esto para dar un efecto parallax
+    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a los bordes del lienzo
     
     this.x1 = this.x1-((250-this.x1)*0.024)
     this.y1 = this.y1+((250-this.x1)*0.016)
@@ -168,7 +167,7 @@ class PinturaIzquierda {
     this.red = this.red + ((250-this.x1)*0.013)
   }
   
-  //Funcion encargada de dibujar el cuadro en cada frame
+  //Funcion encargada de dibujar la pintura en cada frame
   dibujar(){
  fill(this.red,this.green,this.blue)
     quad(this.x1,this.y1,this.x2,this.y2,this.x3,this.y3,this.x4,this.y4)
@@ -201,7 +200,7 @@ class PinturaDerecha {
     this.x4 = 255
     this.y4 = 10
     
-    //Variables para el color:
+    //Variables para el color del cuadro:
     this.red = 0
     this.green = 0
     this.blue = 0
@@ -210,9 +209,7 @@ class PinturaDerecha {
   //Funcion encargada de mover los puntos de la pintura y cambiar el color del cuadro para dar la sensación de acercamiento
   moverse(){
     
-    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a la persona
-    //Esto para dar un efecto paralax
-    
+    //El movimiento de las pinturas sera mas rapido a medida que se acerquen mas a los bordes del lienzo
     this.x1 = this.x1+((this.x2-250)*0.016)
     this.y1 = this.y1+((this.x2-250)*0.016)
     
@@ -229,7 +226,7 @@ class PinturaDerecha {
     this.red = this.red + ((this.x2-250)*0.013)
   }
   
-  //Funcion encargada de dibujar el cuadro en cada frame
+  //Funcion encargada de dibujar la pintura en cada frame
   dibujar(){
  fill(this.red,this.green,this.blue)
     quad(this.x1,this.y1,this.x2,this.y2,this.x3,this.y3,this.x4,this.y4)
@@ -275,7 +272,7 @@ class Suelo{
     this.escalagrisEscalon = 0
   }
   
-  //Funcion encargada de mover las coordenadas del suelo para dar la sensación de movimiento. Entre mas cerca esta el suelo al usuario mas rapido se cambia la posición para dar un efecto parallax.
+  //Funcion encargada de mover las coordenadas del suelo para dar la sensación de movimiento. Entre mas cerca esta el suelo o escalon al usuario mas rapido se cambia su posición.
   moverse(){
     
     

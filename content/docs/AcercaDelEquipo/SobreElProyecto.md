@@ -1,10 +1,4 @@
----
-title: Introduction
-type: docs
----
-# Visual Computing 2023-1 SJF Showcase 
-
-Bienvenid@s a la página del grupo Visual Computing 2023-1 SJF.
+# Sobre el proyecto
 
 Esta página tiene como objetivo mostrar los ejercicios desarrollados por Santiago Cassiano Rozo, Julián Camilo Alfonso Carrillo y Fabian Camilo Castro Lozano en el curso de Computación Visual.
  
