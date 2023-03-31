@@ -25,6 +25,14 @@ function cargarImagen(file) {
       // la imagen se ha cargado correctamente
       console.log("Imagen cargada");
 
+      // redimensionar la imagen si su altura o ancho es mayor a 600px
+      let max_width = 600;
+      let max_height = 600;
+      if (img.width > max_width || img.height > max_height) {
+        let reducir = min(max_width / img.width, max_height / img.height);
+        img.resize(img.width * reducir, img.height * reducir);
+      }
+
       // establecer el tamaño del canvas
       createCanvas(img.width, img.height);
       //Aplicar la correccion de color a la imagen

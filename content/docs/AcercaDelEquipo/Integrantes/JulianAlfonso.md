@@ -1,9 +1,13 @@
 # Julián Camilo Alfonso Carrillo
 
-<div align="left">
-    <img src="/showcase/images/Foto_Julian.jpeg" alt="Foto Julian" style="height: 250px; width:250px;"/>
-    Estudiante de Ingeniería de Sistemas y Computación en la Universidad Nacional de Colombia.
+<div class="pull-right">
+    <img src="/showcase/images/Foto_Julian.jpeg" alt="Foto Julian" style="height: 150px; width:150px;"/>   
 </div>
+Estudiante de Ingeniería de Sistemas y Computación en la Universidad Nacional de Colombia.
+
+
+
+ 
 
 Dentro de los diversos ámbitos en los que se puede aplicar la carrera, los que llaman mi atención son el desarrollo web en front-end y el diseño de la interfaz de usuario y experiencia de usuario (UI/UX). Son los ambitos en los que me he enfocado y me atraen para iniciar en el mundo laboral, me interesa la posibilidad de crear y diseñar interfaces digitales que sean atractivas visualmente y, al mismo tiempo, funcionales y fáciles de usar para el usuario final. Considero que esta área de trabajo combina habilidades técnicas y creativas, lo que me resulta muy interesante y motivador.
 
