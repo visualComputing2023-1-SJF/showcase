@@ -171,7 +171,17 @@ Para un futuro es interesante expandir el trabajo e incluir una solución para l
 
 ## Bibliografía
 
+- Pagina del curso. Jean Pierre Charalambos. https://visualcomputing.github.io/
 
+- Montanero, Manuel, et al. "Daltonismo y rendimiento escolar en la educación infantil." Revista de educación (2003). https://redined.educacion.gob.es/xmlui/bitstream/handle/11162/67221/008200430251.pdf?sequence=1
+
+- Masataka Okabe, Kei Ito. Color Universal Design (CUD). How to make figures and presentations that are friendly to Colorblind people. https://jfly.uni-koeln.de/color/
+
+- Colorlite, test de Ishihara online para detectar el daltonismo. https://www.es.colorlitelens.com/Ishihara-test-de-daltonismo
+
+- Example: use a btn to up load img2, by tianrandesign. https://editor.p5js.org/tianrandesign/sketches/HJfkBmrJW
+
+- Chromatic Vision Simulator, app que simula la visión del color de las deficiencias de la visión del color. https://asada.website/cvsimulator/e/
 
 
 
