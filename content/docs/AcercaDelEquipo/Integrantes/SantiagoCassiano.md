@@ -1,5 +1,9 @@
 # Santiago Cassiano Rozo
 
+<div class="pull-right">
+    <img src="/showcase/images/Foto_Santiago.jpg" alt="Foto Santiago" style="height: 150px; width:130px;"/>   
+</div>
+
 Estudiante del programa de Ingeniería de Sistemas y Computación de la Universidad Nacional de Colombia.
 
 Dentro de mi carrera los campos que principalmente me **interesan** son el desarrollo de **aplicaciones web** y **videojuegos**.
