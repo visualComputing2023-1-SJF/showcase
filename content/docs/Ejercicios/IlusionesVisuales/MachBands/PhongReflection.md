@@ -146,6 +146,8 @@ void main() {
 Cabe resaltar que los shaders mostrados anteriormente, son modificaciones de los shaders presentados por [Adam Ferriss](https://github.com/aferriss/p5jsShaderExamples) y por [SubOptimal Engineer](https://github.com/SuboptimalEng/shader-tutorials)
 
 ## Resultados
+Controles: Haga click sobre el snippet para capturar el mouse. Use WASD para desplazarse respecto a la cámara y mueva el mouse para dirigir el enfoque. Pulse q y e para moverse hacia arriba y abajo. Con la barra espaciadora se reinicia la cámara. Con control cambia entre los modos de shaders y finalmente con escape puede dejar de capturar el mouse.
+
 {{< p5-iframe sketch="/showcase/sketches/modelShading.js" width="600" height="600" >}} 
 
 ## Conclusiones y trabajo a futuro
