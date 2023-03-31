@@ -69,6 +69,6 @@ function corregirColor(img) {
 function draw() {
   // dibujar la imagen si ha sido cargada
   if (img) {
-    image(img, 0, 0);
+    image(img, 0, 50);
   }
 }

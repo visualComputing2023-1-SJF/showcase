@@ -134,7 +134,7 @@ Por último se usa la función `draw()` para dibujar la imagen cargada en el can
 Por favor, use el botón "Seleccionar imagen" para escoger una imagen almacenada en su equipo a la que le quiera aplicar la corrección de color.
 
 <div align="center">
-{{< p5-iframe sketch="/showcase/sketches/coloring/cargarImagen.js" width="600" height="600" >}}
+{{< p5-iframe sketch="/showcase/sketches/coloring/cargarImagen.js" width="650" height="650" >}}
 </div>
 
 En este ejercicio se permite al usuario con deuteranopia elegir la imagen a la cual le quiere realizar la corrección de color, desde el almacenamiento local de su equipo.
