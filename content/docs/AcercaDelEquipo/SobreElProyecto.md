@@ -6,4 +6,4 @@ En la sección **Acerca Del Equipo** podrás encontrar información sobre cada u
 
 En la sección **Ejercicios** se encuentran las actividades que hemos realizado a lo largo del semestre. Dentro de este apartado se encuentran los ejercicios sobre **ilusiones visuales**, en donde desarrollamos actividades sobre los temas Coloring, Depth Perception y Mach Bands.
 
-El **repositorio** base para esta pagina web se encuentra [aqui](https://github.com/visualComputing2023-1-SJF/showcase)
+Si quieres conocer el **repositorio** base para esta pagina web puedes acceder [aqui](https://github.com/visualComputing2023-1-SJF/showcase)
