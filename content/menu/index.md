@@ -6,3 +6,5 @@ headless: true
 - [Integrantes]({{< relref "/docs/AcercaDelEquipo/Integrantes" >}})
 - **Ejercicios**
 - [IlusionesVisuales]({{< relref "/docs/Ejercicios/IlusionesVisuales" >}})
+- [Shaders]({{< relref "/docs/Ejercicios/Shaders" >}})
+- [3D]({{< relref "/docs/Ejercicios/3D" >}})
