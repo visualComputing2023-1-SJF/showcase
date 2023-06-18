@@ -15,4 +15,4 @@ La animación generada con el código es la siguiente:
 
 ## Conclusiones y trabajo futuro
 
-## Bibliografia
+## Bibliografía
