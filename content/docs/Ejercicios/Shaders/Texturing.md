@@ -282,7 +282,7 @@ Oprimiendo los checkbox de la interfaz se puede invertir la imagen desde Javascr
 
 Dentro del código también se puede activar la visualización de las coordenadas de textura u y v. Entre más rojo contenga una coordenada mayor es su valor en el eje u, y entre más verde contenga una coordenada mayor es su valor en el eje v. Cabe destacar que con esta visualización al invertir la imagen por cualquiera de los dos métodos se puede observar como se ven modificadas las coordenadas de textura que corresponden a cada píxel.
 
-Como en el [ejemplo original](https://visualcomputing.github.io/docs/shaders/texturing/)  del curso, se puede aplicar como textura un video (Si se elige el video puede tardar un poco en cargarse y empezar a mostrar el video) o se puede visualizar la luminosidad de los pixeles calculando el luma de cada uno de ellos.
+Como en el [ejemplo original](https://visualcomputing.github.io/docs/shaders/texturing/)  del curso, se puede aplicar como textura un video (Puede tardar un poco en cargar la primera vez que se selecciona) o se puede visualizar la luminosidad de los pixeles calculando el luma de cada uno de ellos.
 
 ## Conclusiones y trabajo futuro
 
