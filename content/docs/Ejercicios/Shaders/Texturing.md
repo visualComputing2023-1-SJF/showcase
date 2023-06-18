@@ -269,7 +269,7 @@ En el archivo “luma.js” dentro de la función draw se encuentra el código c
 
 Si la variable “invertirJavascript” es verdadera, entonces se relacionarán los vértices de la figura y las coordenadas de textura para que se vea invertida como se vio en el marco teórico. Si es falsa entonces se relacionarán de forma que no se vea modificación en la imagen. 
 
-Por otra parte, en el archivo “luma.frag” dependiendo de la variable uniforme booleana “invertir” que se recibe desde el archivo “luma.js”. Si la variable es verdadera entonces el píxel tomará el color de las coordenadas de textura invertidas y finalmente se mostrará la imagen invertida. Si la variabilidad es falsa entonces el pixel tomará el color de las coordenadas de textura que recibe desde el vertex shader.
+Por otra parte, en el archivo “luma.frag” dependiendo de la variable uniforme booleana “invertir” que se recibe desde el archivo “luma.js”. Si la variable es verdadera entonces el píxel tomará el color de las coordenadas de textura invertidas y finalmente se mostrará la imagen invertida. Si la variable es falsa entonces el pixel tomará el color de las coordenadas de textura que recibe desde el vertex shader.
 
 ## Resultados
 La aplicación en ejecución es la siguiente:
@@ -282,7 +282,7 @@ Oprimiendo los checkbox de la interfaz se puede invertir la imagen desde Javascr
 
 Dentro del código también se puede activar la visualización de las coordenadas de textura u y v. Entre más rojo contenga una coordenada mayor es su valor en el eje u, y entre más verde contenga una coordenada mayor es su valor en el eje v. Cabe destacar que con esta visualización al invertir la imagen por cualquiera de los dos métodos se puede observar como se ven modificadas las coordenadas de textura que corresponden a cada píxel.
 
-Como en el [ejemplo original](https://visualcomputing.github.io/docs/shaders/texturing/)  del curso, se puede aplicar como textura un video o se puede visualizar la luminosidad de los pixeles calculando el luma de cada uno de ellos.
+Como en el [ejemplo original](https://visualcomputing.github.io/docs/shaders/texturing/)  del curso, se puede aplicar como textura un video (Si se elige el video puede tardar un poco en cargarse y empezar a mostrar el video) o se puede visualizar la luminosidad de los pixeles calculando el luma de cada uno de ellos.
 
 ## Conclusiones y trabajo futuro
 
