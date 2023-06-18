@@ -10,12 +10,12 @@ let invertirJavascript = false;
 function preload() {
   lumaShader = readShader('/showcase/sketches/texturing/luma.frag',{ varyings: Tree.texcoords2 });
   
-  // Cargar el video
-  video_src = createVideo('https://upload.wikimedia.org/wikipedia/commons/8/87/Schlossbergbahn.webm');
+  // Cargar el video, el video fue obtenido de https://upload.wikimedia.org/wikipedia/commons/8/87/Schlossbergbahn.webm
+  video_src = createVideo('../../../../../showcase/sketches/texturing/VideoTren.webm');
   video_src.hide(); // Esto para evitar que el video se muestre fuera de la textura
   
-  // Cargar la imagen que se mostrara por defecto
-  img_src = loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Fire_breathing_2_Luc_Viatour.jpg/1024px-Fire_breathing_2_Luc_Viatour.jpg');
+  // Cargar la imagen, la imagen fue obtenida de https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Fire_breathing_2_Luc_Viatour.jpg/1024px-Fire_breathing_2_Luc_Viatour.jpg
+  img_src = loadImage('../../../../../showcase/sketches/texturing/ImagenFuego.jpg');
   src = img_src;
 }
 
