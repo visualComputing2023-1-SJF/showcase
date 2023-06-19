@@ -7,7 +7,7 @@ let mouseOprimido = false;
 
 function preload(){
   nocheEstrellada = loadImage('../../../../../showcase/sketches/3D/Imagenes/nocheEstrellada128.jpg');
-  arbol = loadModel('../../../../../showcase/sketches/3D/Modelos/Formula_1_mesh.obj');
+  arbol = loadModel('../../../../../showcase/sketches/3D/Modelos/Pikachu.obj');
 }
 
 function setup() {
@@ -67,7 +67,7 @@ function draw() {
   push()
   rotateX(PI)
   translate(0,-35,40)
-  scale(0.3,0.3,0.3)
+  scale(1,1,1)
   model(arbol)
   pop()
   

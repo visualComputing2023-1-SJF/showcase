@@ -1,3 +1,6 @@
+---
+Weight: 1
+---
 
 # Blending Modes
 

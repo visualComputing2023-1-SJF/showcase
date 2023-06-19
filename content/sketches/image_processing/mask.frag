@@ -1,20 +1,19 @@
 precision mediump float;
 
-// uniforms are defined and sent by the sketch
+// las variables uniform son definidas y enviadas por el sketch
 uniform bool applyMask;
 uniform sampler2D texture;
 uniform vec2 texOffset;
 
-
-// holds the 3x3 kernel
+// Almacena el kernel de 5x5
 uniform float mask[25];
 
-// interpolated texcoord (same name and type as in vertex shader)
+// Coordenadas interpoladas (mismo tipo y nombre como esta en el vertex shader)
 varying vec2 texcoords2;
 
 void main() {
-  // 1. Use offset to move along texture space.
-  // In this case to find the texcoords of the texel neighbours.
+  // 1. Usar el offset para moverse a lo largo del espacio de la textura.
+  // En este caso se usan para encontrar las coordenadas de textura de los texeles vecinos.
   vec2 tc0 = texcoords2 + vec2(-2.0 * texOffset.s, -2.0 * texOffset.t);
   vec2 tc1 = texcoords2 + vec2(-texOffset.s, -2.0 * texOffset.t);
   vec2 tc2 = texcoords2 + vec2(0.0, -2.0 * texOffset.t);
@@ -28,7 +27,7 @@ void main() {
   vec2 tc10 = texcoords2 + vec2(-2.0 * texOffset.s, 0.0);
   vec2 tc11 = texcoords2 + vec2(-texOffset.s, 0.0);
   
-  // origin (current fragment texcoords)
+  // Origen (Coordenadas de textura del fragmento actual)
   vec2 tc12 = texcoords2 + vec2(0.0, 0.0);
   
   vec2 tc13 = texcoords2 + vec2(+texOffset.s, 0.0);
@@ -44,7 +43,7 @@ void main() {
   vec2 tc23 = texcoords2 + vec2(+texOffset.s, 2.0 * texOffset.t);
   vec2 tc24 = texcoords2 + vec2(2.0 * texOffset.s, 2.0 * texOffset.t);
 
-  // 2. Sample texel neighbours within the rgba array
+  // 2. Muestrear los texeles vecinos y almacenar los datos dentro del arreglo rgba
   vec4 rgba[25];
   rgba[0] = texture2D(texture, tc0);
   rgba[1] = texture2D(texture, tc1);
@@ -72,14 +71,15 @@ void main() {
   rgba[23] = texture2D(texture, tc23);
   rgba[24] = texture2D(texture, tc24);
   
-  // 3. Apply convolution kernel
+  // 3. Aplicar el kernel de convolución
   vec4 convolution;
   for (int i = 0; i < 24; i++) {
     convolution += rgba[i]*mask[i];
   }
-  
+
+  // Calcular el color original del pixel para mostrarlo en caso de que el usuario no quiera aplicar la mascara
   vec4 texel = texture2D(texture, texcoords2);
 
-  // 4. Set color from convolution
+  // 4. Colocar el color obtenido por la convolución
   gl_FragColor = applyMask ? vec4(convolution.rgb, 1.0) : texel; 
 }
