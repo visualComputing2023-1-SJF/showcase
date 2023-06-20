@@ -1,5 +1,5 @@
 ---
-Weight: 1
+Weight: 2
 ---
 
 # Texturing
@@ -25,7 +25,7 @@ El segundo modo se llama NORMAL. En este modo se normalizan las coordenadas de l
 Por ejemplo, si se tiene activado el modo NORMAL en p5js, las coordenadas de textura (u, v) de una imagen pueden verse de la siguiente manera:
 
 <div align="center">
-<img src="/showcase/sketches/texturing/PrimeraImagen.jpg" alt="EscaleraPerspectivaLineal" style="height: 356px; width:469px;"/>
+<img src="/showcase/sketches/texturing/PrimeraImagen.jpg" alt="PrimeraImagen" style="height: 356px; width:469px;"/>
 </div>
 
 Como se puede observar, en la esquina superior izquierda se tienen las coordenadas (0, 0) de textura. A medida que se avanza sobre el eje horizontal la coordenada u crece hasta el valor máximo de 1 y si se avanza en el eje vertical la coordenada v crece hasta un valor máximo de 1. En los ejemplos que se realizarán en este ejercicio se utilizará el modo de textura NORMAL en p5js.
@@ -33,7 +33,7 @@ Como se puede observar, en la esquina superior izquierda se tienen las coordenad
 Otro aspecto importante a resaltar es que al utilizar shaders dentro de p5js con WEBGL los vértices que son visibles en pantalla son los que están dentro del NDC (Normalize Device Coordinates), el cual es un cubo que va desde la coordenada -1 hasta 1 en los ejes X, Y, Z.
 
 <div align="center">
-<img src="/showcase/sketches/texturing/InternetImagen.jpg" alt="EscaleraPerspectivaLineal" style="height: 400px; width:469px;"/>
+<img src="/showcase/sketches/texturing/InternetImagen.jpg" alt="InternetImagen" style="height: 400px; width:469px;"/>
 
 Imagen tomada de [este sitio](https://stackoverflow.com/questions/47233771/negative-values-for-gl-position-w)
 </div>
@@ -43,7 +43,7 @@ Debido a lo anterior, todo lo que se dibuja dentro de un canvas de p5js al aplic
 Por ejemplo, si queremos dibujar una figura sobre el plano z=0 que ocupe todo el canvas dentro de p5js podemos dibujar un cuadrado cuyos vértices sean (-1,-1,0), (1,-1,0), (-1,1,0) y (1,1,0).
 
 <div align="center">
-<img src="/showcase/sketches/texturing/SegundaImagen.jpg" alt="EscaleraPerspectivaLineal" style="height: 400px; width:469px;"/>
+<img src="/showcase/sketches/texturing/SegundaImagen.jpg" alt="SegundaImagen" style="height: 400px; width:469px;"/>
 </div>
 
 Cuando se aplique una textura sobre dicha figura, los vértices de la textura se pueden relacionar con los vértices de la figura con el metodo [vertex()](https://p5js.org/es/reference/#/p5/vertex) como se había explicado previamente.
@@ -51,7 +51,7 @@ Cuando se aplique una textura sobre dicha figura, los vértices de la textura se
 Por ejemplo, si queremos que la textura que mostramos previamente se aplique sobre el cuadrado que tenemos dentro del NDC, entonces podemos relacionar los vértices de la siguiente manera.
 
 <div align="center">
-<img src="/showcase/sketches/texturing/TerceraImagen.jpg" alt="EscaleraPerspectivaLineal" style="height: 500px; width:550px;"/>
+<img src="/showcase/sketches/texturing/TerceraImagen.jpg" alt="TerceraImagen" style="height: 500px; width:550px;"/>
 </div>
 
 Al relacionar de esta forma los vértices de la figura con las coordenadas de textura entonces se mostraría en el canvas la imagen igual a la que estaba en la textura.
@@ -59,7 +59,7 @@ Al relacionar de esta forma los vértices de la figura con las coordenadas de te
 Pero, si modificamos la forma en que relacionamos los vértices de la figura y la textura  podemos invertir la imagen. Esto se puede lograr al hacer que cada vértice de la figura se relacione con la coordenada de textura opuesta a la que mostramos en la imagen anterior. En el siguiente diagrama se expresa esta idea.
 
 <div align="center">
-<img src="/showcase/sketches/texturing/CuartaImagen.jpg" alt="EscaleraPerspectivaLineal" style="height: 500px; width:550px;"/>
+<img src="/showcase/sketches/texturing/CuartaImagen.jpg" alt="CuartaImagen" style="height: 500px; width:550px;"/>
 </div>
 
 Esta es la forma en la que planteamos invertir la imagen dentro de p5js en este ejercicio.
@@ -87,7 +87,7 @@ Igualmente, si la coordenada de textura vertical del píxel era v = 0.6, si calc
 Si le ordenamos al pixel que muestre el color asociado a las coordenadas de textura inversas que ha calculado, entonces haremos que en vez de mostrar el color de la coordenada de textura (0.6, 0.6), muestre los colores de su coordenada de textura inversa (0.4, 0.4).
 
 <div align="center">
-<img src="/showcase/sketches/texturing/QuintaImagen.jpg" alt="EscaleraPerspectivaLineal" style="height: 350px; width:450px;"/>
+<img src="/showcase/sketches/texturing/QuintaImagen.jpg" alt="QuintaImagen" style="height: 350px; width:450px;"/>
 </div>
 
 Realizando este procedimiento con todos los píxeles se obtendrá como resultado que la imagen quede invertida. Esta es la segunda manera en que se invertirá la imagen dentro de este ejercicio.
@@ -291,3 +291,27 @@ En este trabajo se pudo evidenciar que desde Javascript y desde el Fragment Shad
 Como trabajo futuro se podrían incluir más efectos que se puedan realizar tanto desde Javascript como desde el Fragment Shader y comparar sus rendimientos para reconocer cual es la forma más óptima de implementarlos.
 
 ## Bibliografía
+
+Charalambos, J. Texturing. https://visualcomputing.github.io/docs/shaders/texturing/
+
+Charalambos, J. Libreria Treegl. https://github.com/VisualComputing/p5.treegl
+
+Cincotti, C. From Clip Space to NDC Space. https://carmencincotti.com/2022-11-28/from-clip-space-to-ndc-space/
+
+Cincotti, C. Homogeneous Coordinates, Clip Space and NDC | WebGPU. https://carmencincotti.com/2022-05-02/homogeneous-coordinates-clip-space-ndc/
+
+Gonzales, P & Lowe J. Hola mundo - The Book of Shaders. https://thebookofshaders.com/02/?lan=es
+
+Gonzales, P & Lowe J. Texture2D - The Book of Shaders. https://thebookofshaders.com/glossary/?search=texture2D
+
+Rodriguez, J. OpenGL Shading Language Course Chapter 2 - GLSL Basics. https://www.opengl.org/sdk/docs/tutorials/TyphoonLabs/Chapter_2.pdf
+
+Silva, D. Guía sobre WEBGL en P5.js. https://hackmd.io/@dasilvaca/visual_computing
+
+p5js. Referencia beginShape. https://p5js.org/es/reference/#/p5/beginShape
+
+p5js. Referencia endShape. https://p5js.org/es/reference/#/p5/endShape
+
+p5js. Referencia vertex. https://p5js.org/es/reference/#/p5/vertex
+
+p5js. Referencia textureMode. https://p5js.org/es/reference/#/p5/textureMode

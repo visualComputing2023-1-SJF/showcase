@@ -10,7 +10,7 @@ Esta página tiene como objetivo mostrar los ejercicios desarrollados por Santia
  
 En la sección **Acerca Del Equipo** podrás encontrar información sobre cada uno de los integrantes del equipo y sobre este proyecto.
 
-En la sección **Ejercicios** se encuentran las actividades que hemos realizado a lo largo del semestre. Dentro de este apartado se encuentran los ejercicios sobre **ilusiones visuales**, en donde desarrollamos actividades sobre los temas Coloring, Depth Perception y Mach Bands.
+En la sección **Ejercicios** se encuentran las actividades que hemos realizado a lo largo del semestre.
 
 A continuación se muestra el **video** que contiene una **explicación de los ejercicios sobre ilusiones visuales**. 
 

@@ -1,3 +1,6 @@
+---
+Weight: 1
+---
 
 # Color Blending Modes
 

@@ -6,8 +6,10 @@ let sketchCenterX , sketchCenterY , sketchCenterZ;
 let mouseOprimido = false;
 
 function preload(){
-  nocheEstrellada = loadImage('../../../../../showcase/sketches/3D/Imagenes/nocheEstrellada128.jpg');
-  arbol = loadModel('../../../../../showcase/sketches/3D/Modelos/Formula_1_mesh.obj');
+  caratulaPokemon = loadImage('../../../../../showcase/sketches/3D/Imagenes/CajaPokemonAmarillo.png');
+  caratulaF1 = loadImage('../../../../../showcase/sketches/3D/Imagenes/PortadaFormula1.jpg');
+  pikachu = loadModel('../../../../../showcase/sketches/3D/Modelos/Pikachu.obj');
+  vehiculo = loadModel('../../../../../showcase/sketches/3D/Modelos/Formula_1_mesh.obj');
 }
 
 function setup() {
@@ -57,27 +59,43 @@ function draw() {
   plane(300, 100);
   pop()
   
-  //Pedestal de la escultura de arbol
+  //Pedestal de la escultura de pikachu
   push()
   translate(0,50,-40)
   box(30,30,30)
   pop()
   
-  //Escultura del arbol
+  //Escultura del pikachu
   push()
   rotateX(PI)
   translate(0,-35,40)
-  scale(0.3,0.3,0.3)
-  model(arbol)
+  rotateY(PI)
+  scale(2)
+  model(pikachu)
   pop()
   
-  //Pintura de la noche estrellada
+  //Pintura de la caratula de pokemon
   push()
-  texture(nocheEstrellada)
+  texture(caratulaPokemon)
   noStroke() //Para que no salgan lineas sobre la obra
   rotateY(HALF_PI)
   translate(0,0,144)
+  rotateY(PI)
   plane(64, 64)
+  pop()
+
+  //Pedestal de la escultura de carro
+  push()
+  translate(0,50,450)
+  box(30,30,30)
+  pop()
+
+  //Escultura del F1
+  push()
+  rotateX(PI)
+  translate(0,-35,-450)
+  scale(0.3)
+  model(vehiculo)
   pop()
   
   //Manejo de los angulos de la camara

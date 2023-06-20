@@ -24,8 +24,11 @@ function setup() {
 
 function draw() {
   
-  //Pasar variables uniformes al shader
+  //Pasar textura al shader
   maskShader.setUniform('texture',media_src)
+  
+  //Aplicar la textura
+  texture(media_src)
   
   //Definir la figura para dibujar y como se asocian los vertices al espacio de la textura.
   beginShape();
@@ -50,11 +53,10 @@ function draw() {
     input_4_0.value(),input_4_1.value(),input_4_2.value(),input_4_3.value(),input_4_4.value()].map(function(x) {return x * inputFactor.value();})
 
 
-  //Mandar la mascara como uniforme
+  //Mandar el arreglo que contiene la mascara como variable uniforme
   maskShader.setUniform('mask',mascaraObtenida);
 
-  //Funcion que se encarga de actualizar los valores mostrados en la interfaz
-  //de la máscara obtenida
+  //Funcion que se encarga de actualizar los valores mostrados en la interfaz de la máscara obtenida
   actualizarValoresMascaraInterfaz();
 }
 
@@ -373,7 +375,7 @@ function crearElementosInterfaz() {
 
 function actualizarValoresMascaraInterfaz() {
   //Se actualiza el atributo value a los valores de la mascara
-  //Aproximados a 3 cifras decimales
+  //Se muestran aproximados a 3 cifras decimales
   resultadoMatriz_0_0.value(Math.round((mascaraObtenida[0] + Number.EPSILON) * 1000)/1000)
   resultadoMatriz_0_1.value(Math.round((mascaraObtenida[1] + Number.EPSILON) * 1000)/1000)
   resultadoMatriz_0_2.value(Math.round((mascaraObtenida[2] + Number.EPSILON) * 1000)/1000)
