@@ -575,13 +575,18 @@ Si se hacen cambios en la máscara mientras el checkbox está activo estos se ve
 
 Finalmente, si el usuario quiere aplicar la máscara sobre otra imagen o video, en la parte inferior de la aplicación hay un botón para subir el archivo. Una vez sube el archivo, este se mostrará en la parte superior de la aplicación.
 
-A continuación se muestran algunos ejemplos de máscaras aplicadas a algunas imágenes:
-
+En el siguiente video se hace una demostración del uso de la aplicación y se muestran algunos ejemplos de máscaras aplicadas a imágenes o videos:
 <div align="center">
-<img src="/showcase/sketches/image_processing/TerceraImagen.jpg" alt="SegundaImagen" style="height: 400px; width:750px;"/>
+<iframe width="728" height="378" src="https://youtube.com/embed/yNsh4HLkemc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ## Conclusiones y trabajo futuro
+
+Este trabajo permitió ver una implementación de las máscaras de convolución en p5js con el fragment shader. Esta es una implementación que es bastante rápida y permite al usuario fácilmente modificar la máscara y ver inmediatamente los efectos que tiene dicho cambio sobre la imagen.
+
+Por otra parte, con la implementación del factor se puede observar que al aumentar dicho factor se pueden modificar los efectos de una máscara fácilmente.
+
+Como trabajo futuro puede se pueden incluir tamaños de máscara más grandes o permitir a la aplicación aplicar varias máscaras de convolución para lograr otros efectos más complejos.
 
 ## Bibliografía
 

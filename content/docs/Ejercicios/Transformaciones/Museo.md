@@ -289,6 +289,12 @@ A continuación se muestra el programa en ejecución en un iframe de p5.js:
 {{< p5-iframe sketch="/showcase/sketches/3D/museo.js" lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" width="740" height="600" >}}
 </div>
 
+En el siguiente video se hace una demostración del uso de la aplicación y se explican algunos detalles sobre la misma:
+<div align="center">
+<iframe width="728" height="378" src="https://youtube.com/embed/MC1eDe0-rD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+
 ## Conclusiones y trabajo futuro
 
 En conclusión, se logró crear una escena en 3D en la que se pudieron cargar texturas en las paredes para simular cuadros, cargar modelos de esculturas de videojuegos, a los cuales se les pudo aplicar un shader de iluminación de Phong. También se le agregó interactividad al permitir el desplazamiento por la sala y la visualización de información de las piezas, la cual se activaba por medio de Object Picking. De igual forma, se logro optimización en el rendimiento, reemplazando modelos de alta calidad de polígonos, por otros de menor calidad, dependiendo de la distancia del usuario a la pieza.
