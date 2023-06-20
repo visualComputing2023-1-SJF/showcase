@@ -283,7 +283,7 @@ function crearElementosInterfaz() {
 {{< /details>}}
 
 ## Resultados
-La animación generada con el código es la siguiente:
+A continuación se muestra el programa en ejecución en un iframe de p5.js:
 
 <div align="center">
 {{< p5-iframe sketch="/showcase/sketches/3D/museo.js" lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" width="740" height="600" >}}
@@ -298,3 +298,9 @@ Aún hay mucho espacio para mejorar. En primer lugar, se podría ampliar la sala
 ## Bibliografía
 
 Charalambos, J. P. . Space transformations. Recuperado el 19 de Julio de 2023, de https://visualcomputing.github.io/docs/space_transformations/  
+
+Dualbox. (s.f.). Geometry Simplifier. Recuperado el 19 de Julio de 2023, de https://www.dualbox.com/apps/geometry-simplifier/production  
+
+CGTrader. (s.f.). 00Pokemon. Recuperado el 19 de Julio de 2023, de https://www.cgtrader.com/free-3d-models/character/fantasy-character/00pokemon
+
+Free3D. (s.f.). Ferrari Formula 1. Recuperado el 19 de Julio de 2023, de https://free3d.com/3d-model/ferrari-formula-1-72527.html
