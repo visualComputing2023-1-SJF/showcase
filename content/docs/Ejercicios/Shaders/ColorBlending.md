@@ -1,5 +1,5 @@
 
-# Blending Modes
+# Color Blending Modes
 
 ## Introducción
 
