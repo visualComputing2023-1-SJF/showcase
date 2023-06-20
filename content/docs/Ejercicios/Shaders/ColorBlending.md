@@ -271,3 +271,17 @@ De donde se resalta que para que el shader solo se aplique para el cuadro de mez
 Se lograron implementar satisfactoriamente cinco shaders que permiten la mezcla de colores de acuerdo a varios modos diferentes en los que solo bastaba aplicar una fórmula matemática o comparar frente a un número aleatorio.  
 Una de las dificultades que se atravesó al momento de diseñar el programa fue el cómo aplicar un shader sobre una sola sección de la pantalla. Se hicieron múltiples manipulaciones en el fragment shader, pero al final se descubrió que resultaba mucho más fácil solo llamar el shader cuando se quería dibujar el cuadro de mezcla.  
 A futuro podría considerarse la implementación de más modos de mezcla de colores, así como la implementación de otros tipos de mezcla como la mezcla de texturas. 
+
+## Bibliografía
+
+docs.krita.org. (2022). Blending Modes — Krita Manual 5.0.0 documentation. Recuperado el 24 de marzo de 2022, de https://docs.krita.org/en/reference_manual/blending_modes.html
+
+Adobe Master transparency and blends pdf file. (s.f.). Recuperado el 24 de marzo de 2022, de https://www.adobe.com/content/dam/acom/en/devnet/pdf/pdf_reference_archive/master.pdf
+
+GIMP and Photoshop Blending Modes visually explained and compared, parts one, two, three, and four. (s.f.). Recuperado el 24 de marzo de 2022, de https://www.gimp.org/tutorials/Blending_Modes/
+
+JAVA demo on the image blending operator, an interactive JAVA-based image blending demo. (s.f.). Recuperado el 24 de marzo de 2022, de http://www.jhlabs.com/ip/blending/index.html
+
+All the math behind photoshop compositing (including math for using alpha in complex compositions like softlight). (s.f.). Recuperado el 24 de marzo de 2022, de http://www.simplefilter.de/en/basics/mixmods.html
+
+Image Blending Algorithm. (s.f.). Recuperado el 24 de marzo de 2022, de https://www.cs.cmu.edu/~ph/texfund/texfund.pdf
