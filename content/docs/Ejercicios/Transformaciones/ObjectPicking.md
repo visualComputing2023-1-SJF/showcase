@@ -1,3 +1,7 @@
+---
+Weight: 1
+---
+
 # Object Picking
 
 ## Introducción

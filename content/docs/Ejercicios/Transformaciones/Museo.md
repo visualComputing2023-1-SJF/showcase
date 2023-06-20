@@ -1,3 +1,7 @@
+---
+Weight: 2
+---
+
 # Museo
 
 ## Introducción
