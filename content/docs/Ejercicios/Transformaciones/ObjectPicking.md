@@ -275,4 +275,4 @@ Godot Engine contributors. (2021). Ray-casting. Godot Engine documentation.
 
 Charalambos, J. Libreria Treegl. https://github.com/VisualComputing/p5.treegl   
 
-Mauricio Meza Burbano & Charalambos, J. Exploración de WebGL - Gráficos 3D en la Web Informe Final de Pasantía  
+Mauricio Meza Burbano & Charalambos, J. Exploración de WebGL - Gráficos 3D en la Web - Informe Final de Pasantía  

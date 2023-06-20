@@ -274,14 +274,14 @@ A futuro podría considerarse la implementación de más modos de mezcla de colo
 
 ## Bibliografía
 
-docs.krita.org. (2022). Blending Modes — Krita Manual 5.0.0 documentation. Recuperado el 24 de marzo de 2022, de https://docs.krita.org/en/reference_manual/blending_modes.html
+docs.krita.org. (2022). Blending Modes — Krita Manual 5.0.0 documentation. Recuperado el 19 de Julio de 2023, de https://docs.krita.org/en/reference_manual/blending_modes.html
 
-Adobe Master transparency and blends pdf file. (s.f.). Recuperado el 24 de marzo de 2022, de https://www.adobe.com/content/dam/acom/en/devnet/pdf/pdf_reference_archive/master.pdf
+Adobe Master transparency and blends pdf file. (s.f.). Recuperado el 19 de Julio de 2023, de https://www.adobe.com/content/dam/acom/en/devnet/pdf/pdf_reference_archive/master.pdf
 
-GIMP and Photoshop Blending Modes visually explained and compared, parts one, two, three, and four. (s.f.). Recuperado el 24 de marzo de 2022, de https://www.gimp.org/tutorials/Blending_Modes/
+GIMP and Photoshop Blending Modes visually explained and compared, parts one, two, three, and four. (s.f.). Recuperado el 19 de Julio de 2023, de https://www.gimp.org/tutorials/Blending_Modes/
 
-JAVA demo on the image blending operator, an interactive JAVA-based image blending demo. (s.f.). Recuperado el 24 de marzo de 2022, de http://www.jhlabs.com/ip/blending/index.html
+JAVA demo on the image blending operator, an interactive JAVA-based image blending demo. (s.f.). Recuperado el 19 de Julio de 2023, de http://www.jhlabs.com/ip/blending/index.html
 
-All the math behind photoshop compositing (including math for using alpha in complex compositions like softlight). (s.f.). Recuperado el 24 de marzo de 2022, de http://www.simplefilter.de/en/basics/mixmods.html
+All the math behind photoshop compositing (including math for using alpha in complex compositions like softlight). (s.f.). Recuperado el 19 de Julio de 2023, de http://www.simplefilter.de/en/basics/mixmods.html
 
-Image Blending Algorithm. (s.f.). Recuperado el 24 de marzo de 2022, de https://www.cs.cmu.edu/~ph/texfund/texfund.pdf
+Image Blending Algorithm. (s.f.). Recuperado el 19 de Julio de 2023, de https://www.cs.cmu.edu/~ph/texfund/texfund.pdf
